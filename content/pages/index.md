@@ -147,7 +147,7 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
-        fontWeight: 400
+        fontWeight: 500
     type: FeaturedItemsSection
   - subtitle: Instituições Contribuintes
     images:
