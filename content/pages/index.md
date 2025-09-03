@@ -59,7 +59,11 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: Featured items section subtitle
+    subtitle: >-
+      A Plataforma Escolarize nasceu de um projeto de pesquisa do Instituto de
+      Psicologia da Universidade de São Paulo (IP USP) que teve como objetivo
+      realizar um levantamento de produções científicas no Brasil e na América
+      Latina na área da Psicologia Escolar e Educacional
     items:
       - title: Feature Item One
         tagline: This is the tagline
