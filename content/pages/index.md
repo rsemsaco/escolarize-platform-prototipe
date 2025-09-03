@@ -188,7 +188,7 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: Subtitle goes here
+    subtitle: Selecione o banco com o qual deseja interagir
     items:
       - type: FeaturedItem
         title: 500k
