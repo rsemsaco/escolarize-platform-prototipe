@@ -66,8 +66,9 @@ sections:
       - title: Ricardo Maggessi
         tagline: Apresentamos
         subtitle: Idealizador e Engenheiro da Plataforma
-        text: |
-          Graduando em Psicologia na Universidade de São Paulo
+        text: >
+          Graduando em Psicologia na Universidade de São Paulo, Bolsista do
+          Programa Unificado de Bolsas
         image:
           url: /images/abstract-feature1.svg
           altText: Placeholder Image
