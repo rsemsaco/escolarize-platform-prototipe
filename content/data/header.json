@@ -13,15 +13,15 @@
     },
     "primaryLinks": [
         {
-            "label": "Sobre",
-            "url": "/pricing",
+            "label": "Home",
+            "url": "",
             "icon": "arrowRight",
             "iconPosition": "right",
             "style": "secondary",
             "type": "Link"
         },
         {
-            "label": "Blog",
+            "label": "Publicações",
             "altText": "Blog",
             "url": "/blog",
             "icon": "arrowRight",
@@ -39,11 +39,11 @@
             "type": "Link"
         },
         {
-            "label": "Dropdown",
+            "label": "Selecionar",
             "altText": "Dropdown",
             "links": [
                 {
-                    "label": "Dropdown item",
+                    "label": "Brasil",
                     "url": "/",
                     "icon": "arrowRight",
                     "iconPosition": "right",
@@ -51,7 +51,7 @@
                     "type": "Link"
                 },
                 {
-                    "label": "Dropdown item",
+                    "label": "América Latina",
                     "url": "/",
                     "icon": "arrowRight",
                     "iconPosition": "right",
@@ -59,7 +59,7 @@
                     "type": "Link"
                 },
                 {
-                    "label": "Dropdown item",
+                    "label": "Geral",
                     "url": "/",
                     "icon": "arrowRight",
                     "iconPosition": "right",

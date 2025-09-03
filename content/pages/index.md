@@ -52,6 +52,8 @@ sections:
           - pl-16
           - pb-16
           - pr-16
+      text:
+        textAlign: justify
   - title:
       text: Idealizadores do Projeto
       color: text-primary
@@ -61,13 +63,14 @@ sections:
       type: TitleBlock
     subtitle: >-
       A Plataforma Escolarize nasceu de um projeto de pesquisa do Instituto de
-      Psicologia da Universidade de São Paulo (IP - USP)
+      Psicologia da Universidade de São Paulo (IP-USP)
     items:
       - title: Ricardo Maggessi
         tagline: Apresentamos
-        subtitle: This is the item subtitle
-        text: |
-          Follow the tutorial to build your first Netlify Create site.
+        subtitle: Idealizador e Engenheiro da Plataforma
+        text: >
+          Graduando em Psicologia na Universidade de São Paulo, Bolsista do
+          Programa Unificado de Bolsas
         image:
           url: /images/abstract-feature1.svg
           altText: Placeholder Image
@@ -88,9 +91,10 @@ sections:
         type: FeaturedItem
       - title: Marilene Proença
         tagline: Apresentamos
-        subtitle: This is the item subtitle
-        text: |
-          Follow the tutorial to build your first awesome Netlify Create site.
+        subtitle: Orientadora do Projeto de Pesquisa
+        text: >
+          Professora Doutora em Psicologia Escolar e Educacional pela
+          Universidade de São Paulo
         image:
           url: /images/abstract-feature2.svg
           altText: Placeholder image
@@ -111,10 +115,10 @@ sections:
         type: FeaturedItem
       - title: Janaina Cassiano
         tagline: Apresentamos
-        subtitle: This is the item subtitle
+        subtitle: Co-Orientadora do Projeto
         text: >
-          Learn from the tutorial and build your first awesome Netlify Create
-          site.
+          Professora Doutora em Psicologia Escolar e Educacional pela
+          Universidade de Catalão
         image:
           url: /images/abstract-feature1.svg
           altText: Placeholder image
@@ -177,6 +181,7 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
+        fontWeight: 500
     type: ImageGallerySection
   - type: FeaturedItemsSection
     title:
@@ -186,15 +191,16 @@ sections:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: Subtitle goes here
+    subtitle: Selecione o banco com o qual deseja interagir
     items:
       - type: FeaturedItem
-        title: 500k
-        subtitle: Numbers Done
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+        title: Brasil
+        subtitle: Banco de Dados
+        text: >+
+          <div style="text-align: left">###### Com mais de 20k publicações
+          científicas, este banco conta com diversas publicações
+          predominantemente do **território brasileiro**.</div>
+
         actions: []
         elementId: null
         colors: bg-neutralAlt-fg-dark
@@ -217,12 +223,12 @@ sections:
           styles:
             self:
               borderRadius: x-large
-      - title: 20x
-        subtitle: The Job Stuff
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+      - title: América Latina
+        subtitle: Banco de Dados
+        text: >+
+          ###### Com mais de 30k publicações científicas, este banco conta com
+          diversas publicações predominantemente de **países latinoamericanos**.
+
         image:
           url: /images/icon2.svg
           altText: Featured icon two
@@ -242,12 +248,12 @@ sections:
             textAlign: left
             justifyContent: center
         type: FeaturedItem
-      - title: 200%
-        subtitle: Faster
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+      - title: Geral
+        subtitle: Banco de Dados
+        text: >+
+          ###### Com mais de 50k publicações científicas, este banco representa
+          a **junção das publicações** Brasileiras e Latinoamericanas.
+
         image:
           url: /images/icon3.svg
           altText: Featured icon three
@@ -265,18 +271,9 @@ sections:
             borderRadius: x-large
             flexDirection: row
         type: FeaturedItem
-    actions:
-      - label: Get started
-        altText: ''
-        url: /
-        showIcon: false
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        elementId: ''
-        type: Button
+    actions: []
     badge:
-      label: This is a badge
+      label: Escolarize
       color: text-primary
       styles:
         self:
@@ -295,25 +292,6 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
-  - posts:
-      - content/pages/blog/case-study-1.md
-      - content/pages/blog/case-study-2.md
-      - content/pages/blog/case-study-3.md
-    showThumbnail: true
-    showDate: true
-    showAuthor: true
-    variant: three-col-grid
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        padding:
-          - pt-16
-          - pl-16
-          - pb-16
-          - pr-16
-        justifyContent: center
-    type: FeaturedPostsSection
-    hoverEffect: move-up
   - title: Divider
     colors: bg-light-fg-dark
     styles:
@@ -325,18 +303,24 @@ sections:
           - pr-7
     type: DividerSection
   - title:
-      text: Grow your business 10x faster
+      text: Inovação & Educação
       color: text-dark
       styles:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: This is a subtitle
-    text: |-
-      Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl.
-      Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet
-      erat molestie, hendrerit malesuada justo ultrices. Nunc volutpat at erat
-      vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.
+    subtitle: Explorando Fronteiras
+    text: >+
+      <div style="text-align: center">###### *O projeto, desenvolvido ao longo
+      de dois anos por alunos bolsistas e vinculado ao Laboratório
+      Interinstitucional de Estudos e Pesquisas em Psicologia Escolar (LIEPPE),
+      dedicou-se a mapear publicações científicas produzidas entre 2010 e 2023
+      na área da Psicologia Escolar e Educacional. A iniciativa resultou em
+      indicadores longitudinais inéditos e na construção de um acervo que
+      oferece uma visão abrangente da produção científica brasileira e
+      latino-americana, fortalecendo o campo, incentivando novas pesquisas e
+      subsidiando a formulação de políticas públicas mais eficazes.*</div>
+
     media:
       title: Title of the video
       url: /images/placeholder-video.mp4
@@ -358,7 +342,7 @@ sections:
       loop: true
       muted: true
     badge:
-      label: Key Benefits
+      label: Escolarize
       color: text-primary
       styles:
         self:
@@ -372,65 +356,23 @@ sections:
       subtitle:
         textAlign: center
     type: GenericSection
-  - type: GenericSection
-    title:
-      text: Generic section with a video
-      color: text-dark
-      styles:
-        self:
-          textAlign: left
-      type: TitleBlock
-    subtitle: Section with a video subtitle
-    text: |-
-      Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl.
-      Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet
-      erat molestie, hendrerit malesuada justo ultrices. Nunc volutpat at erat
-      vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.
-    actions: []
-    media:
-      title: Title of the video
-      url: /images/placeholder-video.mp4
-      autoplay: true
-      loop: true
-      muted: true
-      controls: false
-      aspectRatio: '16:9'
-      styles:
-        self:
-          padding:
-            - pt-2
-            - pb-2
-            - pl-2
-            - pr-2
-          borderColor: border-dark
-          borderStyle: solid
-          borderWidth: 1
-          borderRadius: large
-      type: VideoBlock
-    elementId: null
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        flexDirection: row
-        justifyContent: center
-      subtitle:
-        textAlign: left
   - title:
-      text: Social Media Management
+      text: Uma Ciência Que Rompe Fronteiras
       color: text-dark
       type: TitleBlock
-    subtitle: Increase your reach
+    subtitle: Vertente Histórico-Cultural
     text: >
-      A service that helps businesses to manage their social media accounts and
-      posts.
+      Contando com mais de **50.000 produções científicas**, o projeto foi
+      pioneiro na criação de um acervo de dados direcionado exclusivamente à
+      área de Psicologia Escolar e Educacional.
     actions:
-      - label: Get started
+      - label: Realizar Consulta
         url: /
         icon: arrowRight
         iconPosition: right
         style: secondary
         type: Button
-      - label: See Tutorials
+      - label: Saiba Mais
         url: /
         showIcon: true
         icon: arrowRight
@@ -442,7 +384,7 @@ sections:
       altText: Fun feature preview
       type: ImageBlock
     badge:
-      label: This is a badge
+      label: Pioneirismo
       color: text-primary
       type: Badge
     colors: bg-light-fg-dark
@@ -451,21 +393,21 @@ sections:
         alignItems: center
     type: GenericSection
   - title:
-      text: Business Consulting
+      text: Tecnologia Eficaz E Inteligente
       color: text-dark
       type: TitleBlock
-    subtitle: Be in good company
+    subtitle: Computação Consciente
     text: >
-      A service that provides advice and guidance to startups and small
-      businesses.
+      Mais de **300 buscas avançadas** em plataformas abertas foram realizadas
+      por meio de automações em fluxos de pesquisa.
     actions:
-      - label: Get started
+      - label: Realizar Consulta
         url: /
         icon: arrowRight
         iconPosition: right
         style: secondary
         type: Button
-      - label: See Tutorials
+      - label: Saiba Mais
         url: /
         showIcon: true
         icon: arrowRight
@@ -477,7 +419,7 @@ sections:
       altText: Dope design preview
       type: ImageBlock
     badge:
-      label: This is a badge
+      label: Inovação
       color: text-primary
       type: Badge
     colors: bg-light-fg-dark
@@ -689,10 +631,10 @@ sections:
       subtitle:
         textAlign: center
   - title:
-      text: Quero participar de futuros Grupos de Pesquisa
+      text: Participar de futuros Grupos de Pesquisa
       color: text-dark
       type: TitleBlock
-    subtitle: Section with a form subtitle
+    subtitle: Queremos te Conhecer
     text: |-
       Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl.
       Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet
@@ -703,21 +645,21 @@ sections:
         - name: name
           label: Name
           hideLabel: true
-          placeholder: Your name
+          placeholder: Seu nome
           isRequired: true
           width: full
           type: TextFormControl
         - name: email
           label: Email
           hideLabel: true
-          placeholder: Your email
+          placeholder: Seu e-mail
           isRequired: true
           width: full
           type: EmailFormControl
         - name: message
           label: Message
           hideLabel: true
-          placeholder: Your message
+          placeholder: Sua mensagem
           width: full
           type: TextareaFormControl
       elementId: contact-form
@@ -735,14 +677,14 @@ sections:
       type: FormBlock
       submitButton:
         type: SubmitButtonFormControl
-        label: Submit
+        label: Enviar
         showIcon: false
         icon: arrowRight
         iconPosition: right
         style: primary
         elementId: null
     badge:
-      label: Contact Us
+      label: Contato
       color: text-primary
       type: Badge
     colors: bg-light-fg-dark
