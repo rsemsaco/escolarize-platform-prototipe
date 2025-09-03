@@ -14,7 +14,7 @@ sections:
       da Psicologia Escolar e Educacional.</div>
 
     actions:
-      - label: Get started
+      - label: Realizar Consulta
         altText: ''
         url: /
         showIcon: false
