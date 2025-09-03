@@ -398,7 +398,7 @@ sections:
         alignItems: center
     type: GenericSection
   - title:
-      text: Tecnologia Inteligentevvvvvv
+      text: vvvvvTecnologia Inteligentevvvvvv
       color: text-dark
       type: TitleBlock
     subtitle: Be in good company
