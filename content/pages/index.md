@@ -147,6 +147,7 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
+        fontWeight: 400
     type: FeaturedItemsSection
   - subtitle: Award winning enterprises trust us
     images:
