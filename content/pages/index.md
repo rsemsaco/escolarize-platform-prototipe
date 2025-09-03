@@ -115,8 +115,8 @@ sections:
         tagline: Apresentamos
         subtitle: Co-Orientadora do Projeto
         text: >
-          Learn from the tutorial and build your first awesome Netlify Create
-          site.
+          Professora Doutora em Psicologia Escolar e Educacional pela
+          Universidade de Catalão
         image:
           url: /images/abstract-feature1.svg
           altText: Placeholder image
