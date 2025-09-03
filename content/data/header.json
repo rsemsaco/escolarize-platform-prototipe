@@ -14,7 +14,7 @@
     "primaryLinks": [
         {
             "label": "Home",
-            "url": "/home",
+            "url": "escolarize.netlify.app/",
             "icon": "arrowRight",
             "iconPosition": "right",
             "style": "secondary",
