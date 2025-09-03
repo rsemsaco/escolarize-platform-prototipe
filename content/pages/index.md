@@ -191,7 +191,7 @@ sections:
     subtitle: Selecione o banco com o qual deseja interagir
     items:
       - type: FeaturedItem
-        title: Banco Brasileiro
+        title: Banco Brasil
         subtitle: Numbers Done
         text: >-
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
