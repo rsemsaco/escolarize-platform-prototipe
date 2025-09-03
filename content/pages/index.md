@@ -67,7 +67,7 @@ sections:
         tagline: Apresentamos
         subtitle: Idealizador e Engenheiro da Plataforma
         text: |
-          Follow the tutorial to build your first Netlify Create site.
+          Graduando em Psicologia na Universidade de São Paulo
         image:
           url: /images/abstract-feature1.svg
           altText: Placeholder Image
