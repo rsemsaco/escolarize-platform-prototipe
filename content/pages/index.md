@@ -225,9 +225,10 @@ sections:
               borderRadius: x-large
       - title: América Latina
         subtitle: Banco de Dados
-        text: >
-          Com mais de 30k publicações científicas, este banco conta com diversas
-          publicações predominantemente de **países latinoamericanos**.
+        text: >+
+          ###### Com mais de 30k publicações científicas, este banco conta com
+          diversas publicações predominantemente de **países latinoamericanos**.
+
         image:
           url: /images/icon2.svg
           altText: Featured icon two
