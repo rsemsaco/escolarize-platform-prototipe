@@ -181,7 +181,7 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
-        fontWeight: 700
+        fontWeight: 500
     type: ImageGallerySection
   - type: FeaturedItemsSection
     title:
