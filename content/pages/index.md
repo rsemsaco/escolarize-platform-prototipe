@@ -151,6 +151,7 @@ sections:
         textAlign: center
         fontWeight: 400
     type: FeaturedItemsSection
+    elementId: idealizadoresdoprojeto
   - subtitle: Instituições Contribuintes
     images:
       - url: /images/empathy-logo.svg
