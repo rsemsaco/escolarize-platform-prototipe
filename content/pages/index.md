@@ -8,10 +8,11 @@ sections:
       color: text-dark
       type: TitleBlock
     subtitle: Brasil & América Latina
-    text: >
-      O Primeiro Banco de Dados de Acesso Aberto da América Latina que engloba
-      produções científicas voltadas para a área da Psicologia Escolar e
-      Educacional.
+    text: >+
+      <div style="text-align: left">O Primeiro Banco de Dados de Acesso Aberto
+      da América Latina que engloba produções científicas voltadas para a área
+      da Psicologia Escolar e Educacional.</div>
+
     actions:
       - label: Get started
         altText: ''
