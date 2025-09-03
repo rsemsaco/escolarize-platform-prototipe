@@ -250,9 +250,10 @@ sections:
         type: FeaturedItem
       - title: Geral
         subtitle: Banco de Dados
-        text: >
-          Com mais de 50k publicações científicas, este banco representa a
-          junção das publicações Brasileiras e Latinoamericanas.
+        text: >+
+          ###### Com mais de 50k publicações científicas, este banco representa
+          a junção das publicações Brasileiras e Latinoamericanas.
+
         image:
           url: /images/icon3.svg
           altText: Featured icon three
