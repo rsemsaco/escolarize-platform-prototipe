@@ -193,9 +193,11 @@ sections:
       - type: FeaturedItem
         title: Brasil
         subtitle: Banco de Dados
-        text: >
-          Com mais de 20k publicações científicas, este banco conta com diversas
-          publicações predominantemente do território brasileiro.
+        text: >+
+          <div style="text-align: left">Com mais de 20k publicações científicas,
+          este banco conta com diversas publicações predominantemente do
+          território brasileiro.</div>
+
         actions: []
         elementId: null
         colors: bg-neutralAlt-fg-dark
