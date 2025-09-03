@@ -59,7 +59,7 @@
                     "type": "Link"
                 },
                 {
-                    "label": "",
+                    "label": "Geral",
                     "url": "/",
                     "icon": "arrowRight",
                     "iconPosition": "right",
