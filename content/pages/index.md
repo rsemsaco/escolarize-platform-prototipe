@@ -180,7 +180,7 @@ sections:
     type: ImageGallerySection
   - type: FeaturedItemsSection
     title:
-      text: Key Benefits
+      text: Indicadores da Plataforma
       color: text-dark
       styles:
         self:
