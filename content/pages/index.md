@@ -391,6 +391,8 @@ sections:
     styles:
       self:
         alignItems: center
+      text:
+        textAlign: justify
     type: GenericSection
   - title:
       text: Tecnologia Eficaz E Inteligente
