@@ -308,7 +308,7 @@ sections:
           - pr-7
     type: DividerSection
   - title:
-      text: Inovação e Educação
+      text: Inovação & Educação
       color: text-dark
       styles:
         self:
