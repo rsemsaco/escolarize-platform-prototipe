@@ -197,7 +197,7 @@ sections:
         title: Brasil
         subtitle: Banco de Dados
         text: >+
-          <div style="text-align: left">##### Com mais de 20k publicações
+          <div style="text-align: left">###### Com mais de 20k publicações
           científicas, este banco conta com diversas publicações
           predominantemente do **território brasileiro**.</div>
 
