@@ -316,7 +316,7 @@ sections:
       type: TitleBlock
     subtitle: Explorando Fronteiras
     text: >+
-      <div style="text-align: center">##### O projeto, desenvolvido ao longo de
+      <div style="text-align: center">###### O projeto, desenvolvido ao longo de
       dois anos por alunos bolsistas e vinculado ao Laboratório
       Interinstitucional de Estudos e Pesquisas em Psicologia Escolar (LIEPPE),
       dedicou-se a mapear publicações científicas produzidas entre 2010 e 2023
