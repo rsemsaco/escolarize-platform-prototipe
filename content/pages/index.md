@@ -87,7 +87,7 @@ sections:
             flexDirection: col
         type: FeaturedItem
       - title: Marilene Proença
-        tagline: This is the tagline
+        tagline: Apresentamos
         subtitle: This is the item subtitle
         text: |
           Follow the tutorial to build your first awesome Netlify Create site.
