@@ -8,7 +8,7 @@ topSections:
       text: Publicações
       color: text-dark
       type: TitleBlock
-    subtitle: This is the subtitle
+    subtitle: Registros e Arquivos de Materiais
     posts:
       - content/pages/blog/top-ten-lessons-we-learned.md
     showThumbnail: true
