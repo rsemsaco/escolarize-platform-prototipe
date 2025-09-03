@@ -689,7 +689,7 @@ sections:
       subtitle:
         textAlign: center
   - title:
-      text: Generic Section With A Form
+      text: Quero participar de futuros Grupos de Pesquisa
       color: text-dark
       type: TitleBlock
     subtitle: Section with a form subtitle
