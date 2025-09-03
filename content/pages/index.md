@@ -147,7 +147,7 @@ sections:
         textAlign: center
         fontWeight: 400
     type: FeaturedItemsSection
-  - subtitle: Award winning enterprises trust us
+  - subtitle: Instituições Contribuintes
     images:
       - url: /images/empathy-logo.svg
         altText: Empathy logo
