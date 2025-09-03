@@ -16,7 +16,7 @@ sections:
     actions:
       - label: Realizar Consulta
         altText: ''
-        url: /
+        url: /#bancodedados
         showIcon: false
         icon: arrowRight
         iconPosition: right
