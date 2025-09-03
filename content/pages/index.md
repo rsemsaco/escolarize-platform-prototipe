@@ -635,11 +635,18 @@ sections:
       color: text-dark
       type: TitleBlock
     subtitle: Queremos te Conhecer
-    text: |-
-      Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl.
-      Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet
-      erat molestie, hendrerit malesuada justo ultrices. Nunc volutpat at erat
-      vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.
+    text: >+
+      Convidamos pesquisadores, estudantes e interessados a entrarem em contato
+      para participação em futuros projetos e iniciativas do LIEPPE.
+
+
+      Sua colaboração científica é fundamental para fortalecer o campo da
+      Psicologia Escolar e Educacional.
+
+
+      Junte-se a nós na construção coletiva de conhecimento e na promoção de
+      práticas e políticas mais eficazes.
+
     media:
       fields:
         - name: name
