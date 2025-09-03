@@ -367,8 +367,9 @@ sections:
       type: TitleBlock
     subtitle: Increase your reach
     text: >
-      A service that helps businesses to manage their social media accounts and
-      posts.
+      Contando com mais de 50.000 produções científicas, o projeto foi pioneiro
+      na criação de um acervo de dados direcionado exclusivamente à área de
+      Psicologia Escolar e Educacional.
     actions:
       - label: Get started
         url: /
