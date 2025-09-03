@@ -196,7 +196,7 @@ sections:
         text: >+
           <div style="text-align: left">Com mais de 20k publicações científicas,
           este banco conta com diversas publicações predominantemente do
-          território brasileiro.</div>
+          **território brasileiro**.</div>
 
         actions: []
         elementId: null
