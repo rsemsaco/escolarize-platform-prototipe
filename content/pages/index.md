@@ -631,7 +631,7 @@ sections:
       subtitle:
         textAlign: center
   - title:
-      text: Quero participar de futuros Grupos de Pesquisa
+      text: Participar de futuros Grupos de Pesquisa
       color: text-dark
       type: TitleBlock
     subtitle: Queremos te Conhecer
