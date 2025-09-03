@@ -444,7 +444,7 @@ sections:
     type: DividerSection
   - type: CarouselSection
     title: null
-    subtitle: Relatos dos profissionais simpatizantes do projeto
+    subtitle: Relatos dos profissionais simpatizantes do Projeto
     items:
       - title: >-
           “A designer knows he has achieved perfection not when there is nothing
