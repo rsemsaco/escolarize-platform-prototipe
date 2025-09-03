@@ -362,7 +362,7 @@ sections:
         textAlign: center
     type: GenericSection
   - title:
-      text: Social Media Management
+      text: Ciência Que Rompe Fronteiras
       color: text-dark
       type: TitleBlock
     subtitle: Increase your reach
