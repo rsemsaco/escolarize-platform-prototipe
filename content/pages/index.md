@@ -362,7 +362,7 @@ sections:
         textAlign: center
     type: GenericSection
   - title:
-      text: Ciência Que Rompe Fronteiras
+      text: Uma Ciência Que Rompe Fronteiras
       color: text-dark
       type: TitleBlock
     subtitle: Vertente Histórico-Cultural
