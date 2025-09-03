@@ -403,8 +403,8 @@ sections:
       type: TitleBlock
     subtitle: Be in good company
     text: >
-      A service that provides advice and guidance to startups and small
-      businesses.
+      Mais de **300 buscas avançadas** em plataformas abertas foram realizadas
+      por meio de automações em fluxos de pesquisa.
     actions:
       - label: Realizar Consulta
         url: /
