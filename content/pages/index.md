@@ -148,7 +148,6 @@ sections:
       subtitle:
         textAlign: left
         fontWeight: 400
-        fontStyle: italic
     type: FeaturedItemsSection
   - subtitle: Award winning enterprises trust us
     images:
