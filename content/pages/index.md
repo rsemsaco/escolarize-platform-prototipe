@@ -368,7 +368,7 @@ sections:
       área de Psicologia Escolar e Educacional.
     actions:
       - label: Realizar Consulta
-        url: /
+        url: /#bancodedados
         icon: arrowRight
         iconPosition: right
         style: secondary
