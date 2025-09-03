@@ -4,7 +4,7 @@ slug: /
 sections:
   - type: GenericSection
     title:
-      text: Banco de Dados - Psicologia Escolar e Educacional
+      text: "Banco de Dados\_ Psicologia Escolar e Educacional"
       color: text-dark
       type: TitleBlock
     subtitle: Brasil & América Latina
