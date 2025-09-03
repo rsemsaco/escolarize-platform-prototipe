@@ -371,7 +371,7 @@ sections:
       pioneiro na criação de um acervo de dados direcionado exclusivamente à
       área de Psicologia Escolar e Educacional.
     actions:
-      - label: Get started
+      - label: Realizar Consulta
         url: /
         icon: arrowRight
         iconPosition: right
