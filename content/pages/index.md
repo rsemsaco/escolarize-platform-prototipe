@@ -52,6 +52,8 @@ sections:
           - pl-16
           - pb-16
           - pr-16
+      text:
+        textAlign: justify
   - title:
       text: Idealizadores do Projeto
       color: text-primary
