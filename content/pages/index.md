@@ -113,7 +113,7 @@ sections:
         type: FeaturedItem
       - title: Janaina Cassiano
         tagline: Apresentamos
-        subtitle: Subcoordenadora do Projeto
+        subtitle: Co-Orientadora do Projeto
         text: >
           Learn from the tutorial and build your first awesome Netlify Create
           site.
