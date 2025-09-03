@@ -25,7 +25,7 @@ sections:
         type: Button
       - label: Saiba Mais
         altText: ''
-        url: /idealizadoresdoprojeto
+        url: /#idealizadoresdoprojeto
         showIcon: true
         icon: arrowRight
         iconPosition: right
