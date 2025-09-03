@@ -65,7 +65,7 @@ sections:
     items:
       - title: Ricardo Maggessi
         tagline: Apresentamos
-        subtitle: This is the item subtitle
+        subtitle: Idealizador e Engenheiro da Plataforma
         text: |
           Follow the tutorial to build your first Netlify Create site.
         image:
