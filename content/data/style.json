@@ -16,7 +16,7 @@
     },
     "h2": {
         "size": "5xl",
-        "weight": "normal",
+        "weight": "medium",
         "decoration": "none",
         "case": "none",
         "letterSpacing": "normal",
