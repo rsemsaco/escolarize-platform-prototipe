@@ -64,7 +64,7 @@ sections:
       Psicologia da Universidade de São Paulo (IP - USP)
     items:
       - title: Ricardo Maggessi
-        tagline: This is the tagline
+        tagline: Apresentamos
         subtitle: This is the item subtitle
         text: |
           Follow the tutorial to build your first Netlify Create site.
