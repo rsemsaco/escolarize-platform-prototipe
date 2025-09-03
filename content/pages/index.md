@@ -645,7 +645,7 @@ sections:
         - name: name
           label: Name
           hideLabel: true
-          placeholder: Seu Nome
+          placeholder: Seu nome
           isRequired: true
           width: full
           type: TextFormControl
