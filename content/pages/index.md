@@ -401,7 +401,7 @@ sections:
       text: Tecnologia Eficaz E Inteligente
       color: text-dark
       type: TitleBlock
-    subtitle: Be in good company
+    subtitle: Computação Consciente
     text: >
       Mais de **300 buscas avançadas** em plataformas abertas foram realizadas
       por meio de automações em fluxos de pesquisa.
