@@ -23,7 +23,7 @@
         "type": "ThemeStyleHeading"
     },
     "h3": {
-        "size": "xl",
+        "size": "3xl",
         "weight": "normal",
         "decoration": "none",
         "case": "none",
