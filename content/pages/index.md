@@ -89,7 +89,7 @@ sections:
         type: FeaturedItem
       - title: Marilene Proença
         tagline: Apresentamos
-        subtitle: Coordenadora do Projeto de Pesquisa
+        subtitle: Orientadora do Projeto de Pesquisa
         text: >
           Professora Doutora em Psicologia Escolar e Educacional pela
           Universidade de São Paulo
