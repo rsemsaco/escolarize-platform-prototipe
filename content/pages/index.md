@@ -317,14 +317,14 @@ sections:
     subtitle: Explorando Fronteiras
     text: >+
       <div style="text-align: center">###### *O projeto, desenvolvido ao longo
-      de dois anos por alunos bolsistas e vinculado ao Laboratório
-      Interinstitucional de Estudos e Pesquisas em Psicologia Escolar (LIEPPE),
-      dedicou-se a mapear publicações científicas produzidas entre 2010 e 2023
-      na área da Psicologia Escolar e Educacional. A iniciativa resultou em
-      indicadores longitudinais inéditos e na construção de um acervo que
-      oferece uma visão abrangente da produção científica brasileira e
-      latino-americana, fortalecendo o campo, incentivando novas pesquisas e
-      subsidiando a formulação de políticas públicas mais eficazes.*</div>
+      de dois anos por alunos bolsistas e vinculado ao **Laboratório
+      Interinstitucional de Estudos e Pesquisas em Psicologia Escolar
+      (LIEPPE)**, dedicou-se a mapear publicações científicas produzidas entre
+      2010 e 2023 na área da Psicologia Escolar e Educacional. A iniciativa
+      resultou em indicadores longitudinais inéditos e na construção de um
+      acervo que oferece uma visão abrangente da produção científica brasileira
+      e latino-americana, fortalecendo o campo, **incentivando novas pesquisas e
+      subsidiando a formulação de políticas públicas** mais eficazes.*</div>
 
     media:
       title: Title of the video
