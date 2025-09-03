@@ -53,7 +53,7 @@ sections:
           - pb-16
           - pr-16
   - title:
-      text: List of features here
+      text: Idealizadores do Projeto
       color: text-primary
       styles:
         self:
