@@ -90,8 +90,9 @@ sections:
       - title: Marilene Proença
         tagline: Apresentamos
         subtitle: Coordenadora do Projeto de Pesquisa
-        text: |
-          Follow the tutorial to build your first awesome Netlify Create site.
+        text: >
+          Professora Doutora em Psicologia Escolar e Educacional pela
+          Universidade de São Paulo
         image:
           url: /images/abstract-feature2.svg
           altText: Placeholder image
