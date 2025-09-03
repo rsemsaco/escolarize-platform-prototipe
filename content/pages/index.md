@@ -63,7 +63,7 @@ sections:
       A Plataforma Escolarize nasceu de um projeto de pesquisa do Instituto de
       Psicologia da Universidade de São Paulo (IP - USP)
     items:
-      - title: Feature Item One
+      - title: Ricardo Maggessi
         tagline: This is the tagline
         subtitle: This is the item subtitle
         text: |
