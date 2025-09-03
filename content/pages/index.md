@@ -365,7 +365,7 @@ sections:
       text: Ciência Que Rompe Fronteiras
       color: text-dark
       type: TitleBlock
-    subtitle: Increase your reach
+    subtitle: Vertente Histórico-Cultural
     text: >
       Contando com mais de **50.000 produções científicas**, o projeto foi
       pioneiro na criação de um acervo de dados direcionado exclusivamente à
