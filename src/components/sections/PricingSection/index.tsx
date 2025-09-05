@@ -9,11 +9,11 @@ import TitleBlock from '../../blocks/TitleBlock';
 import ImageBlock from '../../blocks/ImageBlock';
 import { Action, Badge } from '../../atoms';
 
-// 🔑 Import Firebase
+// 🔑 Firebase
 import { db } from '../../../utils/firebaseConfig';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 
-export default function PricingSection(props) {
+export default function PricingSection(props: any) {
   const { elementId, colors, backgroundImage, badge, title, subtitle, plans = [], styles = {}, enableAnnotations } = props;
 
   // 🔎 Estados da busca
@@ -24,28 +24,26 @@ export default function PricingSection(props) {
   const [showModal, setShowModal] = React.useState(false);
   const [selectedItem, setSelectedItem] = React.useState<any>(null);
 
-  // 🔍 Função de busca Firestore
+  // 🔍 Função de busca no Firestore
   const handleSearch = async () => {
     if (!queryText.trim()) return;
-
     setLoading(true);
 
     try {
-      // Coleção no Firestore
-      const colRef = collection(db, 'produtos'); // ajuste para o nome da sua coleção
+      const colRef = collection(db, 'produtos'); // sua coleção no Firebase
       const snapshot = await getDocs(colRef);
+
       const allData: any[] = [];
-      snapshot.forEach(doc => allData.push(doc.data()));
+      snapshot.forEach((doc) => allData.push(doc.data()));
 
-      // Filtrar por campos selecionados
-      const filtered = allData.filter(item => {
-        const lowerQuery = queryText.toLowerCase();
+      const lowerQuery = queryText.toLowerCase();
 
+      const filtered = allData.filter((item) => {
         if (field === 'all') {
           return (
-            (item['Título do Documento']?.toLowerCase().includes(lowerQuery)) ||
-            (item['Todos os autores']?.toLowerCase().includes(lowerQuery)) ||
-            (item['Marcador']?.toLowerCase().includes(lowerQuery))
+            item['Título do Documento']?.toLowerCase().includes(lowerQuery) ||
+            item['Todos os autores']?.toLowerCase().includes(lowerQuery) ||
+            item['Marcador']?.toLowerCase().includes(lowerQuery)
           );
         } else {
           return item[field]?.toLowerCase().includes(lowerQuery);
@@ -54,7 +52,7 @@ export default function PricingSection(props) {
 
       setResults(filtered);
     } catch (error) {
-      console.error('Erro ao buscar dados do Firebase:', error);
+      console.error('❌ Erro ao buscar no Firebase:', error);
       setResults([]);
     }
 
@@ -88,9 +86,38 @@ export default function PricingSection(props) {
       {...getDataAttrs(props)}
     >
       <div className={classNames('w-full', 'flex', 'flex-col', mapStyles({ alignItems: styles?.self?.justifyContent ?? 'flex-start' }))}>
-        
-        {/* 🔎 Barra de pesquisa */}
-        <div style={{ marginBottom: '1rem', display:'flex', gap:'0.5rem', flexWrap:'wrap' }}>
+
+        {/* Badge */}
+        {badge && <Badge {...badge} className="w-full max-w-sectionBody" {...(enableAnnotations && { 'data-sb-field-path': '.badge' })} />}
+
+        {/* Título */}
+        {title && (
+          <TitleBlock
+            {...title}
+            className={classNames('w-full', 'max-w-sectionBody', { 'mt-4': badge?.label })}
+            {...(enableAnnotations && { 'data-sb-field-path': '.title' })}
+          />
+        )}
+
+        {/* Subtítulo */}
+        {subtitle && (
+          <p
+            className={classNames(
+              'w-full',
+              'max-w-sectionBody',
+              'text-lg',
+              'sm:text-2xl',
+              styles?.subtitle ? mapStyles(styles?.subtitle) : undefined,
+              { 'mt-4': badge?.label || title?.text }
+            )}
+            {...(enableAnnotations && { 'data-sb-field-path': '.subtitle' })}
+          >
+            {subtitle}
+          </p>
+        )}
+
+        {/* 🔎 Barra de pesquisa - AGORA abaixo do subtítulo */}
+        <div style={{ margin: '1.5rem 0', display:'flex', gap:'0.5rem', flexWrap:'wrap', width:'100%', maxWidth:'800px' }}>
           <select
             value={field}
             onChange={(e) => setField(e.target.value)}
@@ -124,7 +151,7 @@ export default function PricingSection(props) {
         </div>
 
         {/* 📋 Resultados */}
-        <div className="mb-6" style={{ display:'flex', flexDirection:'column', gap:'0.5rem' }}>
+        <div className="mb-6" style={{ display:'flex', flexDirection:'column', gap:'0.5rem', width:'100%', maxWidth:'800px' }}>
           {loading && <p>Carregando...</p>}
           {!loading && !results.length && queryText && <p>Nenhum resultado encontrado.</p>}
           {results.map((item, index) => (
@@ -182,30 +209,7 @@ export default function PricingSection(props) {
           </div>
         )}
 
-        {/* Mantém o resto da Section original */}
-        {badge && <Badge {...badge} className="w-full max-w-sectionBody" {...(enableAnnotations && { 'data-sb-field-path': '.badge' })} />}
-        {title && (
-          <TitleBlock
-            {...title}
-            className={classNames('w-full', 'max-w-sectionBody', { 'mt-4': badge?.label })}
-            {...(enableAnnotations && { 'data-sb-field-path': '.title' })}
-          />
-        )}
-        {subtitle && (
-          <p
-            className={classNames(
-              'w-full',
-              'max-w-sectionBody',
-              'text-lg',
-              'sm:text-2xl',
-              styles?.subtitle ? mapStyles(styles?.subtitle) : undefined,
-              { 'mt-4': badge?.label || title?.text }
-            )}
-            {...(enableAnnotations && { 'data-sb-field-path': '.subtitle' })}
-          >
-            {subtitle}
-          </p>
-        )}
+        {/* Planos originais */}
         {plans.length > 0 && (
           <div className={classNames('w-full', 'overflow-x-hidden', { 'mt-12': !!(badge?.label || title?.text || subtitle) })}>
             <div
@@ -219,7 +223,7 @@ export default function PricingSection(props) {
               )}
               {...(enableAnnotations && { 'data-sb-field-path': '.plans' })}
             >
-              {plans.map((plan, index) => (
+              {plans.map((plan: any, index: number) => (
                 <div
                   key={index}
                   className="px-5 basis-full max-w-full sm:basis-5/6 sm:max-w-[83.33333%] md:basis-2/3 md:max-w-[66.66667%] lg:basis-1/3 lg:max-w-[33.33333%]"
@@ -235,22 +239,10 @@ export default function PricingSection(props) {
   );
 }
 
-function PricingPlan(props) {
-  const {
-    elementId,
-    title,
-    price,
-    details,
-    description,
-    features = [],
-    image,
-    actions = [],
-    colors = 'bg-light-fg-dark',
-    styles = {},
-    hasSectionTitle
-  } = props;
+function PricingPlan(props: any) {
+  const { elementId, title, price, details, description, features = [], image, actions = [], colors = 'bg-light-fg-dark', styles = {}, hasSectionTitle } = props;
   const fieldPath = props['data-sb-field-path'];
-  const TitleTag = hasSectionTitle ? 'h3' : 'h2';
+  const TitleTag: any = hasSectionTitle ? 'h3' : 'h2';
 
   return (
     <div
@@ -329,7 +321,7 @@ function PricingPlan(props) {
               })}
               {...(fieldPath && { 'data-sb-field-path': '.features' })}
             >
-              {features.map((bullet, index) => (
+              {features.map((bullet: string, index: number) => (
                 <li key={index} {...(fieldPath && { 'data-sb-field-path': `.${index}` })}>
                   {bullet}
                 </li>
@@ -350,7 +342,7 @@ function PricingPlan(props) {
               )}
               {...(fieldPath && { 'data-sb-field-path': '.actions' })}
             >
-              {actions.map((action, index) => (
+              {actions.map((action: any, index: number) => (
                 <Action key={index} {...action} className="lg:whitespace-nowrap" {...(fieldPath && { 'data-sb-field-path': `.${index}` })} />
               ))}
             </div>
