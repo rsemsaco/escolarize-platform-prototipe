@@ -20,7 +20,8 @@
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
         "swiper": "^11.1.4",
-        "tailwindcss": "^3.4.3"
+        "tailwindcss": "^3.4.3",
+        "firebase": "^12.02.1",
     },
     "devDependencies": {
         "@base2/pretty-print-object": "^1.0.2",
