@@ -3,11 +3,17 @@ export default async function handler(req, res) {
 
   try {
     const response = await fetch("https://script.google.com/macros/s/AKfycbxpVnMSxihQwO_P6gebekRYPwMClL8Pc-1X5vsU4wf-H0yN4pBurOu2D-C5nvvpoHkHnA/exec");
-    console.log("Response status:", response.status);
-    const data = await response.json();
-    console.log("Data fetched:", data);
+    const text = await response.text();
+    console.log("Raw response:", text);
 
-    // filtra se houver query
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch (parseErr) {
+      console.error("Erro ao fazer parse do JSON:", parseErr);
+      return res.status(500).json({ error: "Resposta do Apps Script não é um JSON válido", raw: text });
+    }
+
     const results = query
       ? data.filter(item => item.nome?.toLowerCase().includes(query.toLowerCase()))
       : data;
