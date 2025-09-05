@@ -30,7 +30,7 @@ export default function PricingSection(props: any) {
     setLoading(true);
 
     try {
-      const colRef = collection(db, 'produtos'); // sua coleção no Firebase
+      const colRef = collection(db, 'Artigos_Brasil'); // sua coleção no Firebase
       const snapshot = await getDocs(colRef);
 
       const allData: any[] = [];
