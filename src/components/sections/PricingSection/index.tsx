@@ -9,47 +9,55 @@ import TitleBlock from '../../blocks/TitleBlock';
 import ImageBlock from '../../blocks/ImageBlock';
 import { Action, Badge } from '../../atoms';
 
+// 🔑 Import Firebase
+import { db } from '../../../utils/firebaseConfig';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+
 export default function PricingSection(props) {
   const { elementId, colors, backgroundImage, badge, title, subtitle, plans = [], styles = {}, enableAnnotations } = props;
 
   // 🔎 Estados da busca
-  const [query, setQuery] = React.useState('');
+  const [queryText, setQueryText] = React.useState('');
   const [field, setField] = React.useState('all');
   const [results, setResults] = React.useState<any[]>([]);
   const [loading, setLoading] = React.useState(false);
   const [showModal, setShowModal] = React.useState(false);
   const [selectedItem, setSelectedItem] = React.useState<any>(null);
 
-  // 🔍 Função de busca
+  // 🔍 Função de busca Firestore
   const handleSearch = async () => {
-    if (!query.trim()) return;
+    if (!queryText.trim()) return;
 
     setLoading(true);
-    try {
-      const res = await fetch(
-        'https://script.google.com/macros/s/AKfycbxpVnMSxihQwO_P6gebekRYPwMClL8Pc-1X5vsU4wf-H0yN4pBurOu2D-C5nvvpoHkHnA/exec'
-      );
-      const data = await res.json();
 
-      if (!Array.isArray(data)) {
-        console.error('Dados retornados não são um array:', data);
-        setResults([]);
-      } else {
-        const filtered = data.filter(item => {
-          if (field === 'all') {
-            return Object.values(item).some(val =>
-              val?.toString().toLowerCase().includes(query.toLowerCase())
-            );
-          } else {
-            return item[field]?.toLowerCase().includes(query.toLowerCase());
-          }
-        });
-        setResults(filtered);
-      }
+    try {
+      // Coleção no Firestore
+      const colRef = collection(db, 'produtos'); // ajuste para o nome da sua coleção
+      const snapshot = await getDocs(colRef);
+      const allData: any[] = [];
+      snapshot.forEach(doc => allData.push(doc.data()));
+
+      // Filtrar por campos selecionados
+      const filtered = allData.filter(item => {
+        const lowerQuery = queryText.toLowerCase();
+
+        if (field === 'all') {
+          return (
+            (item['Título do Documento']?.toLowerCase().includes(lowerQuery)) ||
+            (item['Todos os autores']?.toLowerCase().includes(lowerQuery)) ||
+            (item['Marcador']?.toLowerCase().includes(lowerQuery))
+          );
+        } else {
+          return item[field]?.toLowerCase().includes(lowerQuery);
+        }
+      });
+
+      setResults(filtered);
     } catch (error) {
-      console.error('Erro ao buscar dados:', error);
+      console.error('Erro ao buscar dados do Firebase:', error);
       setResults([]);
     }
+
     setLoading(false);
   };
 
@@ -90,14 +98,14 @@ export default function PricingSection(props) {
           >
             <option value="all">Todos</option>
             <option value="Todos os autores">Autores</option>
-            <option value="Revista">Revista</option>
-            <option value="Data de Publicação">Ano</option>
+            <option value="Título do Documento">Título</option>
+            <option value="Marcador">Marcador</option>
           </select>
           <input
             type="text"
             placeholder="Digite sua pesquisa..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            value={queryText}
+            onChange={(e) => setQueryText(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
             style={{ flex:1, padding:'0.5rem', borderRadius:'4px', border:'1px solid #ccc', backgroundColor:'#f0f0f0' }}
           />
@@ -118,7 +126,7 @@ export default function PricingSection(props) {
         {/* 📋 Resultados */}
         <div className="mb-6" style={{ display:'flex', flexDirection:'column', gap:'0.5rem' }}>
           {loading && <p>Carregando...</p>}
-          {!loading && !results.length && query && <p>Nenhum resultado encontrado.</p>}
+          {!loading && !results.length && queryText && <p>Nenhum resultado encontrado.</p>}
           {results.map((item, index) => (
             <div
               key={index}
