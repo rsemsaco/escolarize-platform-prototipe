@@ -12,6 +12,7 @@
         "algoliasearch": "^4.24.0",
         "classnames": "^2.5.1",
         "dayjs": "^1.11.11",
+        "firebase": "^12.2.1",
         "front-matter": "^4.0.2",
         "glob": "^10.4.2",
         "markdown-to-jsx": "^7.7.3",
@@ -20,7 +21,7 @@
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
         "swiper": "^11.1.4",
-        "tailwindcss": "^3.4.3",
+        "tailwindcss": "^3.4.3"
     },
     "devDependencies": {
         "@base2/pretty-print-object": "^1.0.2",
