@@ -12,6 +12,25 @@ import { Action, Badge } from '../../atoms';
 export default function PricingSection(props) {
     const { elementId, colors, backgroundImage, badge, title, subtitle, plans = [], styles = {}, enableAnnotations } = props;
 
+    // 🔎 Estado da busca
+    const [query, setQuery] = React.useState('');
+    const [results, setResults] = React.useState<any[]>([]);
+    const [loading, setLoading] = React.useState(false);
+
+    const handleSearch = async () => {
+        if (!query.trim()) return;
+
+        setLoading(true);
+        try {
+            const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+            const data = await res.json();
+            setResults(data);
+        } catch (error) {
+            console.error("Erro na busca:", error);
+        }
+        setLoading(false);
+    };
+
     return (
         <Section
             elementId={elementId}
@@ -22,6 +41,37 @@ export default function PricingSection(props) {
             {...getDataAttrs(props)}
         >
             <div className={classNames('w-full', 'flex', 'flex-col', mapStyles({ alignItems: styles?.self?.justifyContent ?? 'flex-start' }))}>
+                {/* 🔎 Barra de pesquisa */}
+                <div style={{ marginBottom: "1rem" }}>
+                    <input
+                        type="text"
+                        placeholder="Buscar produto..."
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        className="border px-3 py-2 rounded"
+                    />
+                    <button
+                        onClick={handleSearch}
+                        className="ml-2 bg-blue-600 text-white px-4 py-2 rounded"
+                    >
+                        Pesquisar
+                    </button>
+                </div>
+
+                {/* 📋 Resultados */}
+                <div className="mb-6">
+                    {loading && <p>Carregando...</p>}
+                    {!loading && results.length === 0 && query && (
+                        <p>Nenhum resultado encontrado.</p>
+                    )}
+                    {results.map((item, index) => (
+                        <div key={index} style={{ marginBottom: "0.5rem" }}>
+                            <strong>{item.nome}</strong>
+                            <p>{item.descricao}</p>
+                        </div>
+                    ))}
+                </div>
+
                 {badge && <Badge {...badge} className="w-full max-w-sectionBody" {...(enableAnnotations && { 'data-sb-field-path': '.badge' })} />}
                 {title && (
                     <TitleBlock
