@@ -10,244 +10,256 @@ import ImageBlock from '../../blocks/ImageBlock';
 import { Action, Badge } from '../../atoms';
 
 export default function PricingSection(props) {
-    const { elementId, colors, backgroundImage, badge, title, subtitle, plans = [], styles = {}, enableAnnotations } = props;
+  const { elementId, colors, backgroundImage, badge, title, subtitle, plans = [], styles = {}, enableAnnotations } = props;
 
-    // 🔎 Estado da busca
-    const [query, setQuery] = React.useState('');
-    const [results, setResults] = React.useState<any[]>([]);
-    const [loading, setLoading] = React.useState(false);
+  // 🔎 Estado da busca
+  const [query, setQuery] = React.useState('');
+  const [results, setResults] = React.useState<any[]>([]);
+  const [loading, setLoading] = React.useState(false);
 
-    const handleSearch = async () => {
-        if (!query.trim()) return;
+  const handleSearch = async () => {
+    if (!query.trim()) return;
 
-        setLoading(true);
-        try {
-            const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
-            const data = await res.json();
-            setResults(data);
-        } catch (error) {
-            console.error("Erro na busca:", error);
-        }
-        setLoading(false);
-    };
+    setLoading(true);
+    try {
+      // 🔗 Fetch direto do Apps Script público
+      const res = await fetch(
+        'https://script.google.com/macros/s/AKfycbxpVnMSxihQwO_P6gebekRYPwMClL8Pc-1X5vsU4wf-H0yN4pBurOu2D-C5nvvpoHkHnA/exec'
+      );
+      const data = await res.json();
 
-    return (
-        <Section
-            elementId={elementId}
-            className="sb-component-pricing-section"
-            colors={colors}
-            backgroundImage={backgroundImage}
-            styles={styles?.self}
-            {...getDataAttrs(props)}
-        >
-            <div className={classNames('w-full', 'flex', 'flex-col', mapStyles({ alignItems: styles?.self?.justifyContent ?? 'flex-start' }))}>
-                {/* 🔎 Barra de pesquisa */}
-                <div style={{ marginBottom: "1rem" }}>
-                    <input
-                        type="text"
-                        placeholder="Buscar produto..."
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        className="border px-3 py-2 rounded"
-                    />
-                    <button
-                        onClick={handleSearch}
-                        className="ml-2 bg-blue-600 text-white px-4 py-2 rounded"
-                    >
-                        Pesquisar
-                    </button>
-                </div>
+      if (!Array.isArray(data)) {
+        console.error('Dados retornados não são um array:', data);
+        setResults([]);
+      } else {
+        // 🔍 Filtra resultados pelo termo digitado
+        const filtered = data.filter(item =>
+          item.nome?.toLowerCase().includes(query.toLowerCase())
+        );
+        setResults(filtered);
+      }
+    } catch (error) {
+      console.error('Erro ao buscar dados:', error);
+      setResults([]);
+    }
+    setLoading(false);
+  };
 
-                {/* 📋 Resultados */}
-                <div className="mb-6">
-                    {loading && <p>Carregando...</p>}
-                    {!loading && results.length === 0 && query && (
-                        <p>Nenhum resultado encontrado.</p>
-                    )}
-                    {results.map((item, index) => (
-                        <div key={index} style={{ marginBottom: "0.5rem" }}>
-                            <strong>{item.nome}</strong>
-                            <p>{item.descricao}</p>
-                        </div>
-                    ))}
-                </div>
+  return (
+    <Section
+      elementId={elementId}
+      className="sb-component-pricing-section"
+      colors={colors}
+      backgroundImage={backgroundImage}
+      styles={styles?.self}
+      {...getDataAttrs(props)}
+    >
+      <div className={classNames('w-full', 'flex', 'flex-col', mapStyles({ alignItems: styles?.self?.justifyContent ?? 'flex-start' }))}>
+        {/* 🔎 Barra de pesquisa */}
+        <div style={{ marginBottom: '1rem' }}>
+          <input
+            type="text"
+            placeholder="Buscar produto..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="border px-3 py-2 rounded"
+          />
+          <button
+            onClick={handleSearch}
+            className="ml-2 bg-blue-600 text-white px-4 py-2 rounded"
+          >
+            Pesquisar
+          </button>
+        </div>
 
-                {badge && <Badge {...badge} className="w-full max-w-sectionBody" {...(enableAnnotations && { 'data-sb-field-path': '.badge' })} />}
-                {title && (
-                    <TitleBlock
-                        {...title}
-                        className={classNames('w-full', 'max-w-sectionBody', { 'mt-4': badge?.label })}
-                        {...(enableAnnotations && { 'data-sb-field-path': '.title' })}
-                    />
-                )}
-                {subtitle && (
-                    <p
-                        className={classNames(
-                            'w-full',
-                            'max-w-sectionBody',
-                            'text-lg',
-                            'sm:text-2xl',
-                            styles?.subtitle ? mapStyles(styles?.subtitle) : undefined,
-                            {
-                                'mt-4': badge?.label || title?.text
-                            }
-                        )}
-                        {...(enableAnnotations && { 'data-sb-field-path': '.subtitle' })}
-                    >
-                        {subtitle}
-                    </p>
-                )}
-                {plans.length > 0 && (
-                    <div className={classNames('w-full', 'overflow-x-hidden', { 'mt-12': !!(badge?.label || title?.text || subtitle) })}>
-                        <div
-                            className={classNames(
-                                'flex',
-                                'flex-wrap',
-                                'items-stretch',
-                                mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }),
-                                'gap-y-10',
-                                '-mx-5'
-                            )}
-                            {...(enableAnnotations && { 'data-sb-field-path': '.plans' })}
-                        >
-                            {plans.map((plan, index) => (
-                                <div
-                                    key={index}
-                                    className="px-5 basis-full max-w-full sm:basis-5/6 sm:max-w-[83.33333%] md:basis-2/3 md:max-w-[66.66667%] lg:basis-1/3 lg:max-w-[33.33333%]"
-                                >
-                                    <PricingPlan {...plan} hasSectionTitle={!!title?.text} {...(enableAnnotations && { 'data-sb-field-path': `.${index}` })} />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
+        {/* 📋 Resultados */}
+        <div className="mb-6">
+          {loading && <p>Carregando...</p>}
+          {!loading && results.length === 0 && query && (
+            <p>Nenhum resultado encontrado.</p>
+          )}
+          {results.map((item, index) => (
+            <div key={index} style={{ marginBottom: '0.5rem', padding: '0.5rem', border: '1px solid #ccc', borderRadius: '4px' }}>
+              <strong>{item.nome}</strong>
+              <p>{item.descricao}</p>
             </div>
-        </Section>
-    );
+          ))}
+        </div>
+
+        {badge && <Badge {...badge} className="w-full max-w-sectionBody" {...(enableAnnotations && { 'data-sb-field-path': '.badge' })} />}
+        {title && (
+          <TitleBlock
+            {...title}
+            className={classNames('w-full', 'max-w-sectionBody', { 'mt-4': badge?.label })}
+            {...(enableAnnotations && { 'data-sb-field-path': '.title' })}
+          />
+        )}
+        {subtitle && (
+          <p
+            className={classNames(
+              'w-full',
+              'max-w-sectionBody',
+              'text-lg',
+              'sm:text-2xl',
+              styles?.subtitle ? mapStyles(styles?.subtitle) : undefined,
+              { 'mt-4': badge?.label || title?.text }
+            )}
+            {...(enableAnnotations && { 'data-sb-field-path': '.subtitle' })}
+          >
+            {subtitle}
+          </p>
+        )}
+        {plans.length > 0 && (
+          <div className={classNames('w-full', 'overflow-x-hidden', { 'mt-12': !!(badge?.label || title?.text || subtitle) })}>
+            <div
+              className={classNames(
+                'flex',
+                'flex-wrap',
+                'items-stretch',
+                mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }),
+                'gap-y-10',
+                '-mx-5'
+              )}
+              {...(enableAnnotations && { 'data-sb-field-path': '.plans' })}
+            >
+              {plans.map((plan, index) => (
+                <div
+                  key={index}
+                  className="px-5 basis-full max-w-full sm:basis-5/6 sm:max-w-[83.33333%] md:basis-2/3 md:max-w-[66.66667%] lg:basis-1/3 lg:max-w-[33.33333%]"
+                >
+                  <PricingPlan {...plan} hasSectionTitle={!!title?.text} {...(enableAnnotations && { 'data-sb-field-path': `.${index}` })} />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </Section>
+  );
 }
 
 function PricingPlan(props) {
-    const {
-        elementId,
-        title,
-        price,
-        details,
-        description,
-        features = [],
-        image,
-        actions = [],
-        colors = 'bg-light-fg-dark',
-        styles = {},
-        hasSectionTitle
-    } = props;
-    const fieldPath = props['data-sb-field-path'];
-    const TitleTag = hasSectionTitle ? 'h3' : 'h2';
+  const {
+    elementId,
+    title,
+    price,
+    details,
+    description,
+    features = [],
+    image,
+    actions = [],
+    colors = 'bg-light-fg-dark',
+    styles = {},
+    hasSectionTitle
+  } = props;
+  const fieldPath = props['data-sb-field-path'];
+  const TitleTag = hasSectionTitle ? 'h3' : 'h2';
 
-    return (
+  return (
+    <div
+      id={elementId}
+      className={classNames(
+        'sb-card',
+        'h-full',
+        colors,
+        styles?.self?.margin ? mapStyles({ margin: styles?.self?.margin }) : undefined,
+        styles?.self?.borderWidth && styles?.self?.borderWidth !== 0 && styles?.self?.borderStyle !== 'none'
+          ? mapStyles({
+              borderWidth: styles?.self?.borderWidth,
+              borderStyle: styles?.self?.borderStyle,
+              borderColor: styles?.self?.borderColor ?? 'border-primary'
+            })
+          : undefined,
+        styles?.self?.borderRadius ? mapStyles({ borderRadius: styles?.self?.borderRadius }) : undefined,
+        styles?.self?.textAlign ? mapStyles({ textAlign: styles?.self?.textAlign }) : undefined,
+        'overflow-hidden',
+        'flex',
+        'flex-col'
+      )}
+      data-sb-field-path={fieldPath}
+    >
+      {image?.url && (
+        <ImageBlock
+          {...image}
+          className={classNames('flex', mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }))}
+          {...(fieldPath && { 'data-sb-field-path': '.image' })}
+        />
+      )}
+      {(title || price || details || description || features.length > 0 || actions.length > 0) && (
         <div
-            id={elementId}
-            className={classNames(
-                'sb-card',
-                'h-full',
-                colors,
-                styles?.self?.margin ? mapStyles({ margin: styles?.self?.margin }) : undefined,
-                styles?.self?.borderWidth && styles?.self?.borderWidth !== 0 && styles?.self?.borderStyle !== 'none'
-                    ? mapStyles({
-                          borderWidth: styles?.self?.borderWidth,
-                          borderStyle: styles?.self?.borderStyle,
-                          borderColor: styles?.self?.borderColor ?? 'border-primary'
-                      })
-                    : undefined,
-                styles?.self?.borderRadius ? mapStyles({ borderRadius: styles?.self?.borderRadius }) : undefined,
-                styles?.self?.textAlign ? mapStyles({ textAlign: styles?.self?.textAlign }) : undefined,
-                'overflow-hidden',
-                'flex',
-                'flex-col'
-            )}
-            data-sb-field-path={fieldPath}
+          id={elementId}
+          className={classNames('grow', 'flex', 'flex-col', styles?.self?.padding ? mapStyles({ padding: styles?.self?.padding }) : undefined)}
         >
-            {image?.url && (
-                <ImageBlock
-                    {...image}
-                    className={classNames('flex', mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }))}
-                    {...(fieldPath && { 'data-sb-field-path': '.image' })}
-                />
-            )}
-            {(title || price || details || description || features.length > 0 || actions.length > 0) && (
-                <div
-                    id={elementId}
-                    className={classNames('grow', 'flex', 'flex-col', styles?.self?.padding ? mapStyles({ padding: styles?.self?.padding }) : undefined)}
-                >
-                    {title && (
-                        <TitleTag
-                            className="text-xl font-normal normal-case tracking-normal no-underline"
-                            {...(fieldPath && { 'data-sb-field-path': '.title' })}
-                        >
-                            {title}
-                        </TitleTag>
-                    )}
-                    {(price || details) && (
-                        <div className={classNames({ 'mt-6': title })}>
-                            {price && (
-                                <div className="text-4xl sm:text-6xl font-medium" {...(fieldPath && { 'data-sb-field-path': '.price' })}>
-                                    {price}
-                                </div>
-                            )}
-                            {details && (
-                                <div
-                                    className={classNames('text-sm', 'font-medium', { 'mt-2': title })}
-                                    {...(fieldPath && { 'data-sb-field-path': '.details' })}
-                                >
-                                    {details}
-                                </div>
-                            )}
-                        </div>
-                    )}
-                    {description && (
-                        <Markdown
-                            options={{ forceBlock: true, forceWrapper: true }}
-                            className={classNames('sb-markdown', { 'mt-10': title || price || details })}
-                            {...(fieldPath && { 'data-sb-field-path': '.description' })}
-                        >
-                            {description}
-                        </Markdown>
-                    )}
-                    {features.length > 0 && (
-                        <ul
-                            className={classNames('list-disc', 'list-inside', 'text-sm', 'space-y-2', {
-                                'mt-4': description,
-                                'mt-10': !description && (title || price || details)
-                            })}
-                            {...(fieldPath && { 'data-sb-field-path': '.features' })}
-                        >
-                            {features.map((bullet, index) => (
-                                <li key={index} {...(fieldPath && { 'data-sb-field-path': `.${index}` })}>
-                                    {bullet}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                    {actions.length > 0 && (
-                        <div
-                            className={classNames(
-                                'flex',
-                                'flex-wrap',
-                                mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }),
-                                'items-center',
-                                'gap-4',
-                                {
-                                    'mt-auto pt-12': title || price || details || description || features.length > 0
-                                }
-                            )}
-                            {...(fieldPath && { 'data-sb-field-path': '.actions' })}
-                        >
-                            {actions.map((action, index) => (
-                                <Action key={index} {...action} className="lg:whitespace-nowrap" {...(fieldPath && { 'data-sb-field-path': `.${index}` })} />
-                            ))}
-                        </div>
-                    )}
+          {title && (
+            <TitleTag
+              className="text-xl font-normal normal-case tracking-normal no-underline"
+              {...(fieldPath && { 'data-sb-field-path': '.title' })}
+            >
+              {title}
+            </TitleTag>
+          )}
+          {(price || details) && (
+            <div className={classNames({ 'mt-6': title })}>
+              {price && (
+                <div className="text-4xl sm:text-6xl font-medium" {...(fieldPath && { 'data-sb-field-path': '.price' })}>
+                  {price}
                 </div>
-            )}
+              )}
+              {details && (
+                <div
+                  className={classNames('text-sm', 'font-medium', { 'mt-2': title })}
+                  {...(fieldPath && { 'data-sb-field-path': '.details' })}
+                >
+                  {details}
+                </div>
+              )}
+            </div>
+          )}
+          {description && (
+            <Markdown
+              options={{ forceBlock: true, forceWrapper: true }}
+              className={classNames('sb-markdown', { 'mt-10': title || price || details })}
+              {...(fieldPath && { 'data-sb-field-path': '.description' })}
+            >
+              {description}
+            </Markdown>
+          )}
+          {features.length > 0 && (
+            <ul
+              className={classNames('list-disc', 'list-inside', 'text-sm', 'space-y-2', {
+                'mt-4': description,
+                'mt-10': !description && (title || price || details)
+              })}
+              {...(fieldPath && { 'data-sb-field-path': '.features' })}
+            >
+              {features.map((bullet, index) => (
+                <li key={index} {...(fieldPath && { 'data-sb-field-path': `.${index}` })}>
+                  {bullet}
+                </li>
+              ))}
+            </ul>
+          )}
+          {actions.length > 0 && (
+            <div
+              className={classNames(
+                'flex',
+                'flex-wrap',
+                mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }),
+                'items-center',
+                'gap-4',
+                {
+                  'mt-auto pt-12': title || price || details || description || features.length > 0
+                }
+              )}
+              {...(fieldPath && { 'data-sb-field-path': '.actions' })}
+            >
+              {actions.map((action, index) => (
+                <Action key={index} {...action} className="lg:whitespace-nowrap" {...(fieldPath && { 'data-sb-field-path': `.${index}` })} />
+              ))}
+            </div>
+          )}
         </div>
-    );
+      )}
+    </div>
+  );
 }
