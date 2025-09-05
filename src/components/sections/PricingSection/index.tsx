@@ -12,17 +12,20 @@ import { Action, Badge } from '../../atoms';
 export default function PricingSection(props) {
   const { elementId, colors, backgroundImage, badge, title, subtitle, plans = [], styles = {}, enableAnnotations } = props;
 
-  // 🔎 Estado da busca
+  // 🔎 Estados da busca
   const [query, setQuery] = React.useState('');
+  const [field, setField] = React.useState('all');
   const [results, setResults] = React.useState<any[]>([]);
   const [loading, setLoading] = React.useState(false);
+  const [showModal, setShowModal] = React.useState(false);
+  const [selectedItem, setSelectedItem] = React.useState<any>(null);
 
+  // 🔍 Função de busca
   const handleSearch = async () => {
     if (!query.trim()) return;
 
     setLoading(true);
     try {
-      // 🔗 Fetch direto do Apps Script público
       const res = await fetch(
         'https://script.google.com/macros/s/AKfycbxpVnMSxihQwO_P6gebekRYPwMClL8Pc-1X5vsU4wf-H0yN4pBurOu2D-C5nvvpoHkHnA/exec'
       );
@@ -32,10 +35,15 @@ export default function PricingSection(props) {
         console.error('Dados retornados não são um array:', data);
         setResults([]);
       } else {
-        // 🔍 Filtra pelo campo correto "Título do Documento"
-      const filtered = data.filter(item =>
-        item["Título do Documento"]?.toLowerCase().includes(query.toLowerCase())
-      );
+        const filtered = data.filter(item => {
+          if (field === 'all') {
+            return Object.values(item).some(val =>
+              val?.toString().toLowerCase().includes(query.toLowerCase())
+            );
+          } else {
+            return item[field]?.toLowerCase().includes(query.toLowerCase());
+          }
+        });
         setResults(filtered);
       }
     } catch (error) {
@@ -43,6 +51,23 @@ export default function PricingSection(props) {
       setResults([]);
     }
     setLoading(false);
+  };
+
+  // 📤 Exportar CSV
+  const exportCSV = () => {
+    if (!results.length) return alert('Nenhum dado para exportar.');
+    const headers = ['Título do Documento','Todos os autores','Revista','Data de Publicação','URL','Marcador'];
+    let csvContent = "data:text/csv;charset=utf-8," + headers.join(",") + "\r\n";
+    results.forEach(row => {
+      csvContent += headers.map(h => `"${row[h] || ''}"`).join(",") + "\r\n";
+    });
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `escolarize_busca.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -55,37 +80,101 @@ export default function PricingSection(props) {
       {...getDataAttrs(props)}
     >
       <div className={classNames('w-full', 'flex', 'flex-col', mapStyles({ alignItems: styles?.self?.justifyContent ?? 'flex-start' }))}>
+        
         {/* 🔎 Barra de pesquisa */}
-        <div style={{ marginBottom: '1rem' }}>
+        <div style={{ marginBottom: '1rem', display:'flex', gap:'0.5rem', flexWrap:'wrap' }}>
+          <select
+            value={field}
+            onChange={(e) => setField(e.target.value)}
+            style={{ padding:'0.5rem', borderRadius:'4px', border:'1px solid #ccc', backgroundColor:'#f0f0f0' }}
+          >
+            <option value="all">Todos</option>
+            <option value="Todos os autores">Autores</option>
+            <option value="Revista">Revista</option>
+            <option value="Data de Publicação">Ano</option>
+          </select>
           <input
             type="text"
-            placeholder="Buscar produto..."
+            placeholder="Digite sua pesquisa..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="border px-3 py-2 rounded"
+            onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+            style={{ flex:1, padding:'0.5rem', borderRadius:'4px', border:'1px solid #ccc', backgroundColor:'#f0f0f0' }}
           />
           <button
             onClick={handleSearch}
-            className="ml-2 bg-blue-600 text-white px-4 py-2 rounded"
+            style={{ padding:'0.5rem 1rem', borderRadius:'4px', backgroundColor:'#d3d3d3', border:'none', cursor:'pointer' }}
           >
             Pesquisar
+          </button>
+          <button
+            onClick={exportCSV}
+            style={{ padding:'0.5rem 1rem', borderRadius:'4px', backgroundColor:'#d3d3d3', border:'none', cursor:'pointer' }}
+          >
+            Exportar CSV
           </button>
         </div>
 
         {/* 📋 Resultados */}
-        <div className="mb-6">
+        <div className="mb-6" style={{ display:'flex', flexDirection:'column', gap:'0.5rem' }}>
           {loading && <p>Carregando...</p>}
-          {!loading && results.length === 0 && query && (
-            <p>Nenhum resultado encontrado.</p>
-          )}
+          {!loading && !results.length && query && <p>Nenhum resultado encontrado.</p>}
           {results.map((item, index) => (
-            <div key={index} style={{ marginBottom: '0.5rem', padding: '0.5rem', border: '1px solid #ccc', borderRadius: '4px' }}>
+            <div
+              key={index}
+              style={{
+                padding:'0.5rem',
+                border:'1px solid #ccc',
+                borderRadius:'4px',
+                backgroundColor:'#f7f7f7',
+                cursor:'pointer'
+              }}
+              onClick={() => { setSelectedItem(item); setShowModal(true); }}
+            >
               <strong>{item["Título do Documento"]}</strong>
-              <p>{item.descricao}</p>
+              <p>{item["Todos os autores"]} - {item["Revista"]} ({item["Data de Publicação"]})</p>
             </div>
           ))}
         </div>
 
+        {/* Modal de detalhes */}
+        {showModal && selectedItem && (
+          <div
+            style={{
+              position:'fixed', top:0, left:0, width:'100%', height:'100%',
+              backgroundColor:'rgba(0,0,0,0.4)', display:'flex', justifyContent:'center', alignItems:'center', zIndex:1000
+            }}
+            onClick={() => setShowModal(false)}
+          >
+            <div
+              style={{
+                backgroundColor:'#f0f0f0',
+                padding:'1rem 1.5rem',
+                borderRadius:'6px',
+                minWidth:'300px',
+                maxWidth:'90%',
+                maxHeight:'80%',
+                overflowY:'auto'
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3 style={{ marginBottom:'0.5rem' }}>{selectedItem["Título do Documento"]}</h3>
+              <p><strong>Autores:</strong> {selectedItem["Todos os autores"] || 'N/A'}</p>
+              <p><strong>Revista:</strong> {selectedItem["Revista"] || 'N/A'}</p>
+              <p><strong>Data de Publicação:</strong> {selectedItem["Data de Publicação"] || 'N/A'}</p>
+              <p><strong>URL:</strong> {selectedItem["URL"] ? <a href={selectedItem["URL"]} target="_blank">{selectedItem["URL"]}</a> : 'N/A'}</p>
+              <p><strong>Marcador:</strong> {selectedItem["Marcador"] || 'N/A'}</p>
+              <button
+                style={{ marginTop:'1rem', padding:'0.5rem 1rem', borderRadius:'4px', border:'none', backgroundColor:'#d3d3d3', cursor:'pointer' }}
+                onClick={() => setShowModal(false)}
+              >
+                Fechar
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Mantém o resto da Section original */}
         {badge && <Badge {...badge} className="w-full max-w-sectionBody" {...(enableAnnotations && { 'data-sb-field-path': '.badge' })} />}
         {title && (
           <TitleBlock
