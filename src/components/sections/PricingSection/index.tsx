@@ -32,10 +32,10 @@ export default function PricingSection(props) {
         console.error('Dados retornados não são um array:', data);
         setResults([]);
       } else {
-        // 🔍 Filtra resultados pelo termo digitado
-        const filtered = data.filter(item =>
-          item.nome?.toLowerCase().includes(query.toLowerCase())
-        );
+        // 🔍 Filtra pelo campo correto "Título do Documento"
+      const filtered = data.filter(item =>
+        item["Título do Documento"]?.toLowerCase().includes(query.toLowerCase())
+      );
         setResults(filtered);
       }
     } catch (error) {
