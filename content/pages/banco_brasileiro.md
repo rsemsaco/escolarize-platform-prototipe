@@ -11,7 +11,7 @@ sections:
       type: TitleBlock
     subtitle: Amostras do Território Brasileiro
     plans:
-      - title: Developers
+      - title: Visualização
         price: Free
         details: No credit card required
         description: >-
