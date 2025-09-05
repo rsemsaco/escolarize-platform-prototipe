@@ -80,7 +80,7 @@ export default function PricingSection(props) {
           )}
           {results.map((item, index) => (
             <div key={index} style={{ marginBottom: '0.5rem', padding: '0.5rem', border: '1px solid #ccc', borderRadius: '4px' }}>
-              <strong>{item.nome}</strong>
+              <strong>{item["Título do Documento"]}</strong>
               <p>{item.descricao}</p>
             </div>
           ))}
