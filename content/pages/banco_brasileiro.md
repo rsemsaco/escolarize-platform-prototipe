@@ -25,6 +25,7 @@ sections:
         image:
           altText: Pricing plan 1
           type: ImageBlock
+          url: /images/abstract-feature1.svg
         actions:
           - label: Try for free
             url: /
