@@ -1,6 +1,6 @@
 ---
 title: Banco Brasileiro
-slug: pricing
+slug: banco_brasileiro
 sections:
   - title:
       text: Flexible Pricing
