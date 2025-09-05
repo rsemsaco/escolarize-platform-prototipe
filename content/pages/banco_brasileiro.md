@@ -3,7 +3,7 @@ title: Banco Brasileiro
 slug: banco_brasileiro
 sections:
   - title:
-      text: Flexible Pricing
+      text: Banco de Dados
       color: text-dark
       styles:
         self:
