@@ -14,7 +14,7 @@
     "primaryLinks": [
         {
             "label": "Home",
-            "url": "",
+            "url": "/",
             "icon": "arrowRight",
             "iconPosition": "right",
             "style": "secondary",
@@ -44,7 +44,7 @@
             "links": [
                 {
                     "label": "Brasil",
-                    "url": "/",
+                    "url": "/banco_brasileiro",
                     "icon": "arrowRight",
                     "iconPosition": "right",
                     "style": "secondary",

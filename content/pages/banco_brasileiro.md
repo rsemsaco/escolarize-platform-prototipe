@@ -1,17 +1,17 @@
 ---
-title: Pricing
-slug: pricing
+title: Banco Brasileiro
+slug: banco_brasileiro
 sections:
   - title:
-      text: Flexible Pricing
+      text: Banco de Dados
       color: text-dark
       styles:
         self:
           textAlign: center
       type: TitleBlock
-    subtitle: This is the subtitle for the pricing section
+    subtitle: Amostras do Território Brasileiro
     plans:
-      - title: Developers
+      - title: Visualização
         price: Free
         details: No credit card required
         description: >-
@@ -23,9 +23,9 @@ sections:
           - Feature three
           - Feature four
         image:
-          url: /images/abstract-feature1.svg
           altText: Pricing plan 1
           type: ImageBlock
+          url: /images/abstract-feature1.svg
         actions:
           - label: Try for free
             url: /
@@ -43,7 +43,7 @@ sections:
               - pr-6
             borderRadius: large
         type: PricingPlan
-      - title: Professional
+      - title: Dados & Insights
         price: $99
         details: per month
         description: >-
@@ -75,7 +75,7 @@ sections:
               - pr-6
             borderRadius: large
         type: PricingPlan
-      - title: Enterprise
+      - title: Contribuições
         price: Custom
         details: per month
         description: >-

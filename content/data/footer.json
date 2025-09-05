@@ -18,8 +18,8 @@
                 "type": "Link"
             },
             {
-                "label": "Pricing",
-                "url": "/pricing",
+                "label": "Banco de Dados Brasil",
+                "url": "/banco_brasileiro",
                 "icon": "arrowRight",
                 "iconPosition": "right",
                 "style": "secondary",
