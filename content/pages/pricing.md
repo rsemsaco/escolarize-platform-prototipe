@@ -1,5 +1,5 @@
 ---
-title: Pricing
+title: Banco Brasileiro
 slug: pricing
 sections:
   - title:
