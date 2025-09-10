@@ -183,6 +183,7 @@ sections:
       subtitle:
         textAlign: center
         fontWeight: 500
+        fontStyle: italic
     type: ImageGallerySection
   - type: FeaturedItemsSection
     title:
