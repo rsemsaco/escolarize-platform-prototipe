@@ -21,7 +21,9 @@ sections:
           - >-
             Para visualizar mais informações acerca do artigo basta clicar uma
             vez sobre o título.
-          - Feature two
+          - >-
+            Para realizar o download dos resultados obtidos, clique no botão
+            "CSV" ao lado da barra de pesquisa.
           - Feature three
           - Feature four
         image:
