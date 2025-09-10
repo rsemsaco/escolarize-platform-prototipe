@@ -45,9 +45,9 @@ sections:
       - title: Dados & Insights
         price: Contemple
         details: Números e Indicadores
-        description: >-
-          Sed ut perspiciatis unde omnis, iste natus error sit voluptatem
-          accusantium doloremque.
+        description: >
+          Constam abaixo alguns números e indicadores referentes ao Banco
+          Brasileiro.
         features:
           - Feature one
           - Feature two
