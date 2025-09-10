@@ -16,7 +16,7 @@ sections:
         details: Exibição e Funcionalidades
         description: >
           Para usufruir das funcionalidades de pesquisa siga as recomendações a
-          seguir:
+          seguir.
         features:
           - >-
             Para visualizar mais informações acerca do artigo basta clicar uma
