@@ -40,7 +40,7 @@
         "title": "Company",
         "links": [
             {
-                "label": "Careers",
+                "label": "Pesquisadores",
                 "altText": "careers page",
                 "url": "/careers",
                 "icon": "arrowRight",
