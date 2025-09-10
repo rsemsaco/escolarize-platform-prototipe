@@ -72,7 +72,7 @@ sections:
           Graduando em Psicologia na Universidade de São Paulo, Bolsista do
           Programa Unificado de Bolsas
         image:
-          url: /images/abstract-feature1.svg
+          url: /images/4c529d05-518c-49a8-8c81-1780000f2170.jpeg
           altText: Placeholder Image
           styles:
             self:
