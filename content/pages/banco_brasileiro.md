@@ -12,27 +12,26 @@ sections:
     subtitle: Amostras do Território Brasileiro
     plans:
       - title: Visualização
-        price: Free
-        details: No credit card required
-        description: >-
-          Sed ut perspiciatis unde omnis, iste natus error sit voluptatem
-          accusantium doloremque.
+        price: Explore
+        details: Exibição e Funcionalidades
+        description: >
+          Para usufruir das funcionalidades de pesquisa siga as recomendações a
+          seguir.
         features:
-          - Feature one
-          - Feature two
-          - Feature three
-          - Feature four
+          - >-
+            Para visualizar mais informações acerca do artigo basta clicar uma
+            vez sobre o título.
+          - >-
+            Para realizar o download dos resultados obtidos, clique no botão
+            "CSV" ao lado da barra de pesquisa.
+          - >-
+            Para interagir com a AI reader clique no símbolo "R+" na janela
+            suspensa.
         image:
           altText: Pricing plan 1
           type: ImageBlock
           url: /images/abstract-feature1.svg
-        actions:
-          - label: Try for free
-            url: /
-            icon: arrowRight
-            iconPosition: right
-            style: secondary
-            type: Button
+        actions: []
         colors: bg-neutral-fg-dark
         styles:
           self:
@@ -44,27 +43,24 @@ sections:
             borderRadius: large
         type: PricingPlan
       - title: Dados & Insights
-        price: $99
-        details: per month
-        description: >-
-          Sed ut perspiciatis unde omnis, iste natus error sit voluptatem
-          accusantium doloremque.
+        price: Contemple
+        details: Números e Indicadores
+        description: >
+          Constam abaixo alguns números e indicadores referentes ao Banco
+          Brasileiro.
         features:
-          - Feature one
-          - Feature two
-          - Feature three
-          - Feature four
+          - 'Ao todo, este banco possui 3.931 artigos e publicações científicas.'
+          - >-
+            O ano com maior número de publicações foi o ano de 2015, com 453
+            publicações científicas.
+          - >-
+            A região sudeste contou com o maior número de publicações,
+            concentrando 449.
         image:
           url: /images/abstract-feature2.svg
           altText: Pricing plan 2
           type: ImageBlock
-        actions:
-          - label: Try for free
-            url: /
-            icon: arrowRight
-            iconPosition: right
-            style: secondary
-            type: Button
+        actions: []
         colors: bg-neutral-fg-dark
         styles:
           self:
@@ -76,23 +72,24 @@ sections:
             borderRadius: large
         type: PricingPlan
       - title: Contribuições
-        price: Custom
-        details: per month
-        description: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam.
+        price: Amplie
+        details: Contatos
+        description: >
+          Esta plataforma foi pensada para promover a troca e o fomento de
+          conhecimento.
         features:
-          - Feature one
-          - Feature two
-          - Feature three
-          - Feature four
-          - Feature five
+          - >-
+            Caso tenha interesse, entre em contato com nossos pesquisadores por
+            meio do botão abaixo.
+          - >-
+            Leu um artigo e gostaria de compartilhar suas impressões? Entre para
+            nosso fórum de pesquisadores!
         image:
           url: /images/abstract-feature3.svg
           altText: Pricing plan 3
           type: ImageBlock
         actions:
-          - label: Contact us
+          - label: Contato
             url: /
             icon: arrowRight
             iconPosition: right
