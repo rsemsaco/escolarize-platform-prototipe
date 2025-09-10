@@ -49,7 +49,7 @@ sections:
           Constam abaixo alguns números e indicadores referentes ao Banco
           Brasileiro.
         features:
-          - Feature one
+          - 'Ao todo, este banco possui 3.931 artigos e publicações científicas.'
           - Feature two
           - Feature three
           - Feature four
