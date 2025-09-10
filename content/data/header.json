@@ -30,7 +30,7 @@
             "type": "Link"
         },
         {
-            "label": "Consultas",
+            "label": "Equipe",
             "altText": "Careers page",
             "url": "/careers",
             "icon": "arrowRight",
