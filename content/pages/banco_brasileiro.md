@@ -24,7 +24,9 @@ sections:
           - >-
             Para realizar o download dos resultados obtidos, clique no botão
             "CSV" ao lado da barra de pesquisa.
-          - Feature three
+          - >-
+            Para interagir com a AI reader clique no símbolo "R+" na janela
+            suspensa.
           - Feature four
         image:
           altText: Pricing plan 1
