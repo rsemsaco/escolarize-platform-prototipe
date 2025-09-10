@@ -12,7 +12,7 @@ sections:
     subtitle: Amostras do Território Brasileiro
     plans:
       - title: Visualização
-        price: Explorando
+        price: Explore
         details: No credit card required
         description: >-
           Sed ut perspiciatis unde omnis, iste natus error sit voluptatem
