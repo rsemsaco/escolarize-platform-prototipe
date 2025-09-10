@@ -382,7 +382,7 @@ sections:
         style: primary
         type: Link
     media:
-      url: /images/hero2.svg
+      url: /images/7af2e758-9a7c-4991-ba76-5e8464f3f912.jpeg
       altText: Fun feature preview
       type: ImageBlock
     badge:
