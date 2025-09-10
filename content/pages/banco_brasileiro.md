@@ -78,7 +78,9 @@ sections:
           Esta plataforma foi pensada para promover a troca e o fomento de
           conhecimento.
         features:
-          - Feature one
+          - >-
+            Caso tenha interesse, entre em contato com nossos pesquisadores por
+            meio do botão abaixo.
           - Feature two
           - Feature three
         image:
