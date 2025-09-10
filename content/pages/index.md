@@ -238,7 +238,7 @@ sections:
         subtitle: Banco de Dados
         text: >+
           ###### Com mais de 30k publicações científicas, este banco conta com
-          diversas publicações predominantemente de **países latinoamericanos**.
+          diversas publicações predominantemente **latinoamericanas**.
 
         image:
           url: /images/icon2.svg
