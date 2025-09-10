@@ -75,7 +75,7 @@ sections:
             borderRadius: large
         type: PricingPlan
       - title: Contribuições
-        price: Agregue
+        price: Amplie
         details: Contatos
         description: >-
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
