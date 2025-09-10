@@ -18,7 +18,9 @@ sections:
           Para usufruir das funcionalidades de pesquisa siga as recomendações a
           seguir:
         features:
-          - Feature one
+          - >-
+            Para visualizar mais informações acerca do artigo basta clicar uma
+            vez sobre o título.
           - Feature two
           - Feature three
           - Feature four
