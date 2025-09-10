@@ -44,7 +44,7 @@ sections:
         type: PricingPlan
       - title: Dados & Insights
         price: Contemple
-        details: per month
+        details: Números e Indicadores
         description: >-
           Sed ut perspiciatis unde omnis, iste natus error sit voluptatem
           accusantium doloremque.
