@@ -74,9 +74,9 @@ sections:
       - title: Contribuições
         price: Amplie
         details: Contatos
-        description: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam.
+        description: >
+          Esta plataforma foi pensada para promover a troca e o fomento de
+          conhecimento.
         features:
           - Feature one
           - Feature two
