@@ -76,7 +76,7 @@ sections:
         type: PricingPlan
       - title: Contribuições
         price: Agregue
-        details: per month
+        details: Contatos
         description: >-
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam.
