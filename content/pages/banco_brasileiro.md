@@ -43,7 +43,7 @@ sections:
             borderRadius: large
         type: PricingPlan
       - title: Dados & Insights
-        price: $99
+        price: Contemple
         details: per month
         description: >-
           Sed ut perspiciatis unde omnis, iste natus error sit voluptatem
