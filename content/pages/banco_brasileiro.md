@@ -55,7 +55,7 @@ sections:
             publicações científicas
           - >-
             A região sudeste contou com o maior número de publicações,
-            concentrando 4
+            concentrando 449.
           - Feature four
         image:
           url: /images/abstract-feature2.svg
