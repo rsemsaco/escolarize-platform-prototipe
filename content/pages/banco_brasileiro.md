@@ -13,7 +13,7 @@ sections:
     plans:
       - title: Visualização
         price: Explore
-        details: No credit card required
+        details: Exibição e Funcionalidades
         description: >-
           Sed ut perspiciatis unde omnis, iste natus error sit voluptatem
           accusantium doloremque.
