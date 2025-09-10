@@ -81,7 +81,9 @@ sections:
           - >-
             Caso tenha interesse, entre em contato com nossos pesquisadores por
             meio do botão abaixo.
-          - Feature two
+          - >-
+            Leu um artigo e gostaria de compartilhar suas impressões? Entre para
+            nosso fórum de pesquisadores!
           - Feature three
         image:
           url: /images/abstract-feature3.svg
