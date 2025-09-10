@@ -51,6 +51,7 @@ sections:
         features:
           - 'Ao todo, este banco possui 3.931 artigos e publicações científicas.'
           - 'O ano com maior número de publicações foi o ano de 2015, com 453'
+          - ''
           - Feature three
           - Feature four
         image:
