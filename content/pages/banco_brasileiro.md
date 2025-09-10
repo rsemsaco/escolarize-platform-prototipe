@@ -53,7 +53,6 @@ sections:
           - >-
             O ano com maior número de publicações foi o ano de 2015, com 453
             publicações científicas
-          - ''
           - Feature three
           - Feature four
         image:
