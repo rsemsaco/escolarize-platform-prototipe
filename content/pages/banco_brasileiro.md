@@ -14,9 +14,9 @@ sections:
       - title: Visualização
         price: Explore
         details: Exibição e Funcionalidades
-        description: >-
-          Sed ut perspiciatis unde omnis, iste natus error sit voluptatem
-          accusantium doloremque.
+        description: >
+          Para usufruir das funcionalidades de pesquisa siga as recomendações a
+          seguir:
         features:
           - Feature one
           - Feature two
