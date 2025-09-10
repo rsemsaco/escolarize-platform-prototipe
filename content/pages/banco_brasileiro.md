@@ -53,7 +53,9 @@ sections:
           - >-
             O ano com maior número de publicações foi o ano de 2015, com 453
             publicações científicas
-          - Feature three
+          - >-
+            A região sudeste contou com o maior número de publicações,
+            concentrando 4
           - Feature four
         image:
           url: /images/abstract-feature2.svg
