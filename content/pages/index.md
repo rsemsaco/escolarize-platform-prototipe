@@ -203,7 +203,16 @@ sections:
           científicas, este banco conta com diversas publicações
           predominantemente do **território brasileiro**.</div>
 
-        actions: []
+        actions:
+          - type: Button
+            label: Get started
+            altText: ''
+            url: /
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
         elementId: null
         colors: bg-neutralAlt-fg-dark
         styles:
