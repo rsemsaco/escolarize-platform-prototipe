@@ -13,7 +13,7 @@
     },
     "primaryLinks": [
         {
-            "label": "Home",
+            "label": "Início",
             "url": "/",
             "icon": "arrowRight",
             "iconPosition": "right",
@@ -30,7 +30,7 @@
             "type": "Link"
         },
         {
-            "label": "Consultas",
+            "label": "Equipe",
             "altText": "Careers page",
             "url": "/careers",
             "icon": "arrowRight",

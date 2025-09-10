@@ -4,12 +4,12 @@
         "altText": "Logo light",
         "type": "ImageBlock"
     },
-    "text": "A description of your brand",
+    "text": "Escolarize\n",
     "primaryLinks": {
-        "title": "Product",
+        "title": "Consultas",
         "links": [
             {
-                "label": "Features",
+                "label": "Banco de Dados Geral",
                 "altText": "Features page",
                 "url": "/",
                 "icon": "arrowRight",
@@ -26,7 +26,7 @@
                 "type": "Link"
             },
             {
-                "label": "Documentation",
+                "label": "Banco de Dados América Latina",
                 "url": "/",
                 "icon": "arrowRight",
                 "iconPosition": "right",
@@ -37,10 +37,10 @@
         "type": "FooterLinksGroup"
     },
     "secondaryLinks": {
-        "title": "Company",
+        "title": "Equipe",
         "links": [
             {
-                "label": "Careers",
+                "label": "Pesquisadores",
                 "altText": "careers page",
                 "url": "/careers",
                 "icon": "arrowRight",
@@ -49,7 +49,7 @@
                 "type": "Link"
             },
             {
-                "label": "Blog",
+                "label": "Publicações",
                 "url": "/blog",
                 "icon": "arrowRight",
                 "iconPosition": "right",

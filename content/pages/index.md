@@ -16,7 +16,7 @@ sections:
     actions:
       - label: Realizar Consulta
         altText: ''
-        url: /
+        url: /#bancodedados
         showIcon: false
         icon: arrowRight
         iconPosition: right
@@ -25,7 +25,7 @@ sections:
         type: Button
       - label: Saiba Mais
         altText: ''
-        url: /
+        url: /#idealizadoresdoprojeto
         showIcon: true
         icon: arrowRight
         iconPosition: right
@@ -33,7 +33,7 @@ sections:
         elementId: ''
         type: Link
     media:
-      url: /images/main-hero.svg
+      url: /images/c05e6b68-54c4-478a-a3be-55e7786345cf.jpeg
       altText: Unblock your team boost your time to production preview
       elementId: ''
       type: ImageBlock
@@ -96,7 +96,7 @@ sections:
           Professora Doutora em Psicologia Escolar e Educacional pela
           Universidade de São Paulo
         image:
-          url: /images/abstract-feature2.svg
+          url: /images/abstract-feature1.svg
           altText: Placeholder image
           styles:
             self:
@@ -151,6 +151,7 @@ sections:
         textAlign: center
         fontWeight: 400
     type: FeaturedItemsSection
+    elementId: idealizadoresdoprojeto
   - subtitle: Instituições Contribuintes
     images:
       - url: /images/empathy-logo.svg
@@ -159,10 +160,10 @@ sections:
       - url: /images/wellster-logo.svg
         altText: Wellster logo
         type: ImageBlock
-      - url: /images/vise-logo.svg
+      - url: /images/cnpq.png
         altText: Vise logo
         type: ImageBlock
-      - url: /images/telus-logo.svg
+      - url: /images/usp.png
         altText: Telus logo
         type: ImageBlock
       - url: /images/contenful-logo.svg
@@ -182,6 +183,7 @@ sections:
       subtitle:
         textAlign: center
         fontWeight: 500
+        fontStyle: italic
     type: ImageGallerySection
   - type: FeaturedItemsSection
     title:
@@ -201,7 +203,16 @@ sections:
           científicas, este banco conta com diversas publicações
           predominantemente do **território brasileiro**.</div>
 
-        actions: []
+        actions:
+          - type: Button
+            label: Utilizar
+            altText: ''
+            url: /
+            showIcon: true
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
         elementId: null
         colors: bg-neutralAlt-fg-dark
         styles:
@@ -227,14 +238,23 @@ sections:
         subtitle: Banco de Dados
         text: >+
           ###### Com mais de 30k publicações científicas, este banco conta com
-          diversas publicações predominantemente de **países latinoamericanos**.
+          diversas publicações predominantemente **latinoamericanas**.
 
         image:
           url: /images/icon2.svg
           altText: Featured icon two
           elementId: ''
           type: ImageBlock
-        actions: []
+        actions:
+          - type: Button
+            label: Utilizar
+            altText: ''
+            url: /
+            showIcon: true
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
         colors: bg-neutralAlt-fg-dark
         styles:
           self:
@@ -259,7 +279,16 @@ sections:
           altText: Featured icon three
           elementId: ''
           type: ImageBlock
-        actions: []
+        actions:
+          - type: Button
+            label: Utilizar
+            altText: ''
+            url: /
+            showIcon: true
+            icon: arrowRight
+            iconPosition: right
+            style: secondary
+            elementId: ''
         colors: bg-neutralAlt-fg-dark
         styles:
           self:
@@ -279,7 +308,7 @@ sections:
         self:
           textAlign: center
       type: Badge
-    elementId: ''
+    elementId: bancodedados
     variant: three-col-grid
     colors: bg-neutral-fg-dark
     styles:
@@ -338,8 +367,8 @@ sections:
           borderWidth: 1
           borderRadius: large
       type: VideoBlock
-      autoplay: true
-      loop: true
+      autoplay: false
+      loop: false
       muted: true
     badge:
       label: Escolarize
@@ -367,7 +396,7 @@ sections:
       área de Psicologia Escolar e Educacional.
     actions:
       - label: Realizar Consulta
-        url: /
+        url: /#bancodedados
         icon: arrowRight
         iconPosition: right
         style: secondary
@@ -380,7 +409,7 @@ sections:
         style: primary
         type: Link
     media:
-      url: /images/hero2.svg
+      url: /images/7af2e758-9a7c-4991-ba76-5e8464f3f912.jpeg
       altText: Fun feature preview
       type: ImageBlock
     badge:
@@ -391,6 +420,8 @@ sections:
     styles:
       self:
         alignItems: center
+      text:
+        textAlign: justify
     type: GenericSection
   - title:
       text: Tecnologia Eficaz E Inteligente
@@ -415,7 +446,7 @@ sections:
         style: primary
         type: Link
     media:
-      url: /images/hero3.svg
+      url: /images/88bfe6d7-6745-4270-8c0b-4239bf61691d.jpeg
       altText: Dope design preview
       type: ImageBlock
     badge:
@@ -427,6 +458,8 @@ sections:
       self:
         alignItems: center
         flexDirection: row-reverse
+      text:
+        textAlign: justify
     type: GenericSection
   - title: Divider
     colors: bg-light-fg-dark
@@ -440,7 +473,7 @@ sections:
     type: DividerSection
   - type: CarouselSection
     title: null
-    subtitle: What our customers say about us
+    subtitle: Relatos dos profissionais simpatizantes do Projeto
     items:
       - title: >-
           “A designer knows he has achieved perfection not when there is nothing
@@ -592,36 +625,6 @@ sections:
             flexDirection: row
             justifyContent: center
         type: FeaturedItem
-      - title: >-
-          “Quote from some important person goes right here. I love using
-          Netlify Create.”
-        tagline: Testimonial 6
-        subtitle: 'Jane Doe, Company'
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
-        image:
-          url: /images/img-placeholder-dark.png
-          altText: Jane Doe
-          styles:
-            self:
-              borderRadius: full
-          type: ImageBlock
-        actions: []
-        colors: bg-dark-fg-light
-        styles:
-          self:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-            textAlign: left
-            borderRadius: large
-            flexDirection: row
-            justifyContent: center
-        type: FeaturedItem
     elementId: null
     variant: next-prev-nav
     colors: bg-light-fg-dark
@@ -635,11 +638,12 @@ sections:
       color: text-dark
       type: TitleBlock
     subtitle: Queremos te Conhecer
-    text: |-
-      Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl.
-      Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet
-      erat molestie, hendrerit malesuada justo ultrices. Nunc volutpat at erat
-      vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.
+    text: >
+      Convidamos pesquisadores, estudantes e interessados a entrarem em contato
+      para participação em futuros projetos e iniciativas do LIEPPE. Sua
+      colaboração científica é fundamental para fortalecer o campo da Psicologia
+      Escolar e Educacional. Junte-se a nós na construção coletiva de
+      conhecimento e na promoção de práticas e políticas mais eficazes.
     media:
       fields:
         - name: name
@@ -689,6 +693,9 @@ sections:
       type: Badge
     colors: bg-light-fg-dark
     type: GenericSection
+    styles:
+      text:
+        textAlign: justify
 seo:
   metaTitle: Home - Demo site
   metaDescription: This demo site is built with Netlify Create.
