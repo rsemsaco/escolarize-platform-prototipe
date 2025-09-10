@@ -84,7 +84,6 @@ sections:
           - >-
             Leu um artigo e gostaria de compartilhar suas impressões? Entre para
             nosso fórum de pesquisadores!
-          - Feature three
         image:
           url: /images/abstract-feature3.svg
           altText: Pricing plan 3
