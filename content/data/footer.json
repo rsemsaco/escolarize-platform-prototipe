@@ -9,7 +9,7 @@
         "title": "Consultas",
         "links": [
             {
-                "label": "Features",
+                "label": "Banco de Dados Geral",
                 "altText": "Features page",
                 "url": "/",
                 "icon": "arrowRight",
