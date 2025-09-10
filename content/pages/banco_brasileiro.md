@@ -27,7 +27,6 @@ sections:
           - >-
             Para interagir com a AI reader clique no símbolo "R+" na janela
             suspensa.
-          - Feature four
         image:
           altText: Pricing plan 1
           type: ImageBlock
