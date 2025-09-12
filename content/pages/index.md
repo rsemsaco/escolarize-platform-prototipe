@@ -163,11 +163,11 @@ sections:
       - url: /images/cnpq.png
         altText: Vise logo
         type: ImageBlock
-      - url: /images/download (1).png
-        altText: Telus logo
-        type: ImageBlock
       - url: /images/contenful-logo.svg
         altText: Contentful logo
+        type: ImageBlock
+      - url: /images/download (1).png
+        altText: Telus logo
         type: ImageBlock
       - url: /images/sanity-logo.svg
         altText: Sanity logo
