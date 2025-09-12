@@ -207,7 +207,7 @@ sections:
           - type: Button
             label: Utilizar
             altText: ''
-            url: /
+            url: /banco_brasileiro
             showIcon: true
             icon: arrowRight
             iconPosition: right
