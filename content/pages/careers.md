@@ -17,7 +17,7 @@ sections:
       going to use a passage of Lorem Ipsum, you need to be sure there isn't
       anything embarrassing hidden in the middle of text.
     actions:
-      - label: See open positions
+      - label: Ver Integrantes
         url: /
         icon: arrowRight
         iconPosition: right
