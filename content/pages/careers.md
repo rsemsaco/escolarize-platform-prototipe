@@ -48,7 +48,7 @@ sections:
       opacity: 100
       url: /images/abstract-background.svg
   - title:
-      text: LIEPPE
+      text: Pesquisadores
       color: text-dark
       styles:
         self:
