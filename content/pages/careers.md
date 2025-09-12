@@ -48,7 +48,7 @@ sections:
       opacity: 100
       url: /images/abstract-background.svg
   - title:
-      text: Integrantes do LIEPPE
+      text: LIEPPE
       color: text-dark
       styles:
         self:
