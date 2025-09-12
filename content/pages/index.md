@@ -163,7 +163,7 @@ sections:
       - url: /images/cnpq.png
         altText: Vise logo
         type: ImageBlock
-      - url: /images/usp.png
+      - url: /images/download (1).png
         altText: Telus logo
         type: ImageBlock
       - url: /images/contenful-logo.svg
