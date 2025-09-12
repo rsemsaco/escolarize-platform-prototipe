@@ -48,7 +48,7 @@ sections:
       opacity: 100
       url: /images/abstract-background.svg
   - title:
-      text: Meet the team
+      text: Integrantes do LIEPPE
       color: text-dark
       styles:
         self:
