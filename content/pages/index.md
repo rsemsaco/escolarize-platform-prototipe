@@ -352,7 +352,7 @@ sections:
 
     media:
       title: Title of the video
-      url: / 5734826-hd_1920_1080_30fps.mp4
+      url: images/placeholder-video.mp4
       controls: false
       aspectRatio: '16:9'
       styles:
@@ -367,8 +367,8 @@ sections:
           borderWidth: 1
           borderRadius: large
       type: VideoBlock
-      autoplay: false
-      loop: false
+      autoplay: true
+      loop: true
       muted: true
     badge:
       label: Escolarize
