@@ -11,6 +11,7 @@ sections:
         self:
           textAlign: center
     subtitle: Amostras do Território Latinoamericano
+    firebaseCollection: Artigos_AM
     plans:
       - type: PricingPlan
         title: Visualização
