@@ -10,6 +10,8 @@ sections:
           textAlign: center
       type: TitleBlock
     subtitle: Amostras do Território Brasileiro
+    firebaseCollection: Artigos_Brasil
+    type: PricingSection
     plans:
       - title: Visualização
         price: Explore
@@ -111,7 +113,6 @@ sections:
         justifyContent: center
       subtitle:
         textAlign: center
-    type: PricingSection
 seo:
   metaTitle: Pricing - Demo site
   metaDescription: This is the pricing page built with Netlify Create.
