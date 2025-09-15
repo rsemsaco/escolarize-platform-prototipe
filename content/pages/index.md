@@ -352,7 +352,8 @@ sections:
 
     media:
       title: Title of the video
-      url: images/5734826-hd_1920_1080_30fps.mp4
+      url: >-
+        https://www.pexels.com/pt-br/video/criancas-fazendo-trabalhos-escolares-1580507/
       controls: false
       aspectRatio: '16:9'
       styles:
