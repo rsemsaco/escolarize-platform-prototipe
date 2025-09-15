@@ -163,11 +163,11 @@ sections:
       - url: /images/cnpq.png
         altText: Vise logo
         type: ImageBlock
-      - url: /images/usp.png
-        altText: Telus logo
-        type: ImageBlock
       - url: /images/contenful-logo.svg
         altText: Contentful logo
+        type: ImageBlock
+      - url: /images/download (2).png
+        altText: Telus logo
         type: ImageBlock
       - url: /images/sanity-logo.svg
         altText: Sanity logo
@@ -207,7 +207,7 @@ sections:
           - type: Button
             label: Utilizar
             altText: ''
-            url: /
+            url: /banco_brasileiro
             showIcon: true
             icon: arrowRight
             iconPosition: right
@@ -249,7 +249,7 @@ sections:
           - type: Button
             label: Utilizar
             altText: ''
-            url: /
+            url: /banco_latinoamericano
             showIcon: true
             icon: arrowRight
             iconPosition: right
@@ -352,7 +352,7 @@ sections:
 
     media:
       title: Title of the video
-      url: /images/placeholder-video.mp4
+      url: / 5734826-hd_1920_1080_30fps.mp4
       controls: false
       aspectRatio: '16:9'
       styles:
