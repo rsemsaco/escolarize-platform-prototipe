@@ -10,6 +10,8 @@ sections:
           textAlign: center
       type: TitleBlock
     subtitle: Amostras do Território Brasileiro
+    firebaseCollection: Artigos_Brasil
+    type: PricingSection
     plans:
       - title: Visualização
         price: Explore
