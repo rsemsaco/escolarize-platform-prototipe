@@ -367,7 +367,7 @@ sections:
           borderWidth: 1
           borderRadius: large
       type: VideoBlock
-      autoplay: false
+      autoplay: true
       loop: false
       muted: true
     badge:
