@@ -249,7 +249,7 @@ sections:
           - type: Button
             label: Utilizar
             altText: ''
-            url: /
+            url: /banco_latinoamericano
             showIcon: true
             icon: arrowRight
             iconPosition: right
