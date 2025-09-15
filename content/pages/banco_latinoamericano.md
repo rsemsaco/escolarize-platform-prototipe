@@ -10,7 +10,7 @@ sections:
       styles:
         self:
           textAlign: center
-    subtitle: Amostras do Território Brasileiro
+    subtitle: Amostras do Território Latinoamericano
     plans:
       - type: PricingPlan
         title: Visualização
