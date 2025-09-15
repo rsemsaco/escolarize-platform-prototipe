@@ -352,7 +352,7 @@ sections:
 
     media:
       title: Title of the video
-      url: public/images/5734826-hd_1920_1080_30fps.mp4
+      url: images/5734826-hd_1920_1080_30fps.mp4
       controls: false
       aspectRatio: '16:9'
       styles:
