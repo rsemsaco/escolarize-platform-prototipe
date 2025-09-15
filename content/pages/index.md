@@ -352,7 +352,7 @@ sections:
 
     media:
       title: Title of the video
-      url: www.pexels.com/pt-br/video/criancas-fazendo-trabalhos-escolares-1580507/
+      url: ''
       controls: false
       aspectRatio: '16:9'
       styles:
