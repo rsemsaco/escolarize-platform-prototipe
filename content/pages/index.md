@@ -165,7 +165,7 @@ sections:
       - url: /images/logo cnpq.png
         altText: Vise logo
         type: ImageBlock
-      - url: /images/transferir.png
+      - url: /images/contenful-logo.svg
         altText: Contentful logo
         type: ImageBlock
       - url: /images/OIP.jpg
