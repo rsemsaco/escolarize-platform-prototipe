@@ -355,7 +355,7 @@ sections:
       url: >-
         https://www.youtube.com/watch?v=auHgzx1y-RU&pp=ygUWY2xhc3Nyb29tIHNob3J0IHZpZGVvcw%3D%3D
       controls: false
-      aspectRatio: '16:9'
+      aspectRatio: '4:3'
       styles:
         self:
           padding:
