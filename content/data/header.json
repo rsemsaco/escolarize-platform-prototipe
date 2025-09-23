@@ -60,7 +60,7 @@
                 },
                 {
                     "label": "Geral",
-                    "url": "/",
+                    "url": "/banco_geral",
                     "icon": "arrowRight",
                     "iconPosition": "right",
                     "style": "secondary",
