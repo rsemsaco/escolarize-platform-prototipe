@@ -1,6 +1,6 @@
 ---
 type: PageLayout
-title: Banco Brasileiro
+title: Banco Latinoamericano
 sections:
   - type: PricingSection
     title:
