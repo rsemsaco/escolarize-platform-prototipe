@@ -170,7 +170,7 @@ sections:
       - url: /images/OIP.jpg
         altText: Telus logo
         type: ImageBlock
-      - url: /images/sanity-logo.svg
+      - url: '/images/ChatGPT Image 23 de set. de 2025, 16_45_54.png'
         altText: Sanity logo
         type: ImageBlock
       - url: /images/rangle-logo.svg
