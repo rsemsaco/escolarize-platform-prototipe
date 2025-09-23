@@ -11,7 +11,7 @@
             {
                 "label": "Banco de Dados Geral",
                 "altText": "Features page",
-                "url": "/",
+                "url": "/banco_geral",
                 "icon": "arrowRight",
                 "iconPosition": "right",
                 "style": "secondary",
