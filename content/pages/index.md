@@ -352,26 +352,6 @@ sections:
       latino-americana, fortalecendo o campo, incentivando novas pesquisas e
       subsidiando a formulação de políticas públicas mais eficazes.*</div>
 
-    media:
-      title: Title of the video
-      url: 'https://www.pexels.com/pt-br/video/ondas-quebrando-1390942/'
-      controls: false
-      aspectRatio: '16:9'
-      styles:
-        self:
-          padding:
-            - pt-2
-            - pb-2
-            - pl-2
-            - pr-2
-          borderColor: border-dark
-          borderStyle: solid
-          borderWidth: 1
-          borderRadius: large
-      type: VideoBlock
-      autoplay: true
-      loop: true
-      muted: true
     badge:
       label: Escolarize
       color: text-primary
