@@ -156,7 +156,7 @@ sections:
     elementId: idealizadoresdoprojeto
   - subtitle: Instituições Contribuintes
     images:
-      - url: /images/empathy-logo.svg
+      - url: /images/OIP.jpg
         altText: Empathy logo
         type: ImageBlock
       - url: /images/wellster-logo.svg
