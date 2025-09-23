@@ -422,7 +422,7 @@ sections:
       por meio de automações em fluxos de pesquisa.
     actions:
       - label: Realizar Consulta
-        url: /
+        url: /#bancodedados
         icon: arrowRight
         iconPosition: right
         style: secondary
