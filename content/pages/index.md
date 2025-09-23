@@ -96,7 +96,7 @@ sections:
           Professora Doutora em Psicologia Escolar e Educacional pela
           Universidade de São Paulo
         image:
-          url: /images/abstract-feature1.svg
+          url: /images/enhanced_image.png
           altText: Placeholder image
           styles:
             self:
