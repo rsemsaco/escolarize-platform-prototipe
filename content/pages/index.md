@@ -352,7 +352,8 @@ sections:
 
     media:
       title: Title of the video
-      url: images/5734826-hd_1920_1080_30fps.mp4
+      url: >-
+        https://www.youtube.com/watch?v=auHgzx1y-RU&pp=ygUWY2xhc3Nyb29tIHNob3J0IHZpZGVvcw%3D%3D
       controls: false
       aspectRatio: '16:9'
       styles:
