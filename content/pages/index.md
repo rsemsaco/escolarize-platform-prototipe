@@ -170,7 +170,7 @@ sections:
       - url: /images/OIP.jpg
         altText: Telus logo
         type: ImageBlock
-      - url: /images/CAPES_logo_resized.png
+      - url: /images/cnpq.png
         altText: Sanity logo
         type: ImageBlock
       - url: /images/rangle-logo.svg
