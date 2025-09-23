@@ -354,8 +354,7 @@ sections:
 
     media:
       title: Title of the video
-      url: >-
-        https://www.youtube.com/watch?v=auHgzx1y-RU&pp=ygUWY2xhc3Nyb29tIHNob3J0IHZpZGVvcw%3D%3D
+      url: 'https://www.pexels.com/pt-br/video/ondas-quebrando-1390942/'
       controls: false
       aspectRatio: '16:9'
       styles:
