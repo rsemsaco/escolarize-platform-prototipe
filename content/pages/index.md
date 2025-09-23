@@ -156,25 +156,24 @@ sections:
     elementId: idealizadoresdoprojeto
   - subtitle: Instituições Contribuintes
     images:
-      - url: /images/empathy-logo.svg
+      - url: /images/OIP.jpg
         altText: Empathy logo
         type: ImageBlock
-      - url: /images/wellster-logo.svg
-        altText: Wellster logo
+      - altText: Wellster logo
         type: ImageBlock
       - url: /images/logo cnpq.png
         altText: Vise logo
         type: ImageBlock
-      - url: /images/contenful-logo.svg
+      - url: /images/CAPES_logo_resized.png
         altText: Contentful logo
         type: ImageBlock
       - url: /images/OIP.jpg
         altText: Telus logo
         type: ImageBlock
-      - url: /images/sanity-logo.svg
+      - url: /images/logo cnpq.png
         altText: Sanity logo
         type: ImageBlock
-      - url: /images/rangle-logo.svg
+      - url: /images/CAPES_logo_resized.png
         altText: Rangle logo
         type: ImageBlock
     motion: move-to-left
@@ -285,7 +284,7 @@ sections:
           - type: Button
             label: Utilizar
             altText: ''
-            url: /
+            url: /banco_geral
             showIcon: true
             icon: arrowRight
             iconPosition: right
@@ -352,27 +351,6 @@ sections:
       latino-americana, fortalecendo o campo, incentivando novas pesquisas e
       subsidiando a formulação de políticas públicas mais eficazes.*</div>
 
-    media:
-      title: Title of the video
-      url: >-
-        https://www.youtube.com/watch?v=auHgzx1y-RU&pp=ygUWY2xhc3Nyb29tIHNob3J0IHZpZGVvcw%3D%3D
-      controls: false
-      aspectRatio: '16:9'
-      styles:
-        self:
-          padding:
-            - pt-2
-            - pb-2
-            - pl-2
-            - pr-2
-          borderColor: border-dark
-          borderStyle: solid
-          borderWidth: 1
-          borderRadius: large
-      type: VideoBlock
-      autoplay: true
-      loop: true
-      muted: true
     badge:
       label: Escolarize
       color: text-primary
@@ -388,6 +366,14 @@ sections:
       subtitle:
         textAlign: center
     type: GenericSection
+    media:
+      type: ImageBlock
+      url: /images/pexels-pixabay-159866.jpg
+      altText: Image alt text placeholder
+      elementId: ''
+      styles:
+        self:
+          borderRadius: medium
   - title:
       text: Uma Ciência Que Rompe Fronteiras
       color: text-dark
@@ -436,7 +422,7 @@ sections:
       por meio de automações em fluxos de pesquisa.
     actions:
       - label: Realizar Consulta
-        url: /
+        url: /#bancodedados
         icon: arrowRight
         iconPosition: right
         style: secondary
