@@ -162,7 +162,7 @@ sections:
       - url: /images/wellster-logo.svg
         altText: Wellster logo
         type: ImageBlock
-      - url: /images/cnpq.png
+      - url: /images/logo cnpq.png
         altText: Vise logo
         type: ImageBlock
       - url: /images/contenful-logo.svg
