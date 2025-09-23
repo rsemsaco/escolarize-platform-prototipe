@@ -117,6 +117,8 @@ sections:
         tagline: Apresentamos
         subtitle: Co-Orientadora do Projeto
         text: >
+
+
           Professora Doutora em Psicologia Escolar e Educacional pela
           Universidade de Catalão
         image:
