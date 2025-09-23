@@ -159,8 +159,7 @@ sections:
       - url: /images/OIP.jpg
         altText: Empathy logo
         type: ImageBlock
-      - url: /images/wellster-logo.svg
-        altText: Wellster logo
+      - altText: Wellster logo
         type: ImageBlock
       - url: /images/logo cnpq.png
         altText: Vise logo
