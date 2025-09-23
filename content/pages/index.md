@@ -173,7 +173,7 @@ sections:
       - url: /images/logo cnpq.png
         altText: Sanity logo
         type: ImageBlock
-      - url: /images/rangle-logo.svg
+      - url: /images/CAPES_logo_resized.png
         altText: Rangle logo
         type: ImageBlock
     motion: move-to-left
