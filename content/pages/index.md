@@ -72,7 +72,7 @@ sections:
           Graduando em Psicologia na Universidade de São Paulo, Bolsista do
           Programa Unificado de Bolsas
         image:
-          url: /images/abstract-feature1.svg
+          url: /images/Captura de tela 2025-09-10 140259.png
           altText: Placeholder Image
           styles:
             self:
@@ -96,7 +96,7 @@ sections:
           Professora Doutora em Psicologia Escolar e Educacional pela
           Universidade de São Paulo
         image:
-          url: /images/abstract-feature1.svg
+          url: /images/enhanced_image.png
           altText: Placeholder image
           styles:
             self:
@@ -166,7 +166,7 @@ sections:
       - url: /images/contenful-logo.svg
         altText: Contentful logo
         type: ImageBlock
-      - url: /images/download (2).png
+      - url: /images/OIP.jpg
         altText: Telus logo
         type: ImageBlock
       - url: /images/sanity-logo.svg
@@ -352,7 +352,8 @@ sections:
 
     media:
       title: Title of the video
-      url: images/5734826-hd_1920_1080_30fps.mp4
+      url: >-
+        https://www.youtube.com/watch?v=auHgzx1y-RU&pp=ygUWY2xhc3Nyb29tIHNob3J0IHZpZGVvcw%3D%3D
       controls: false
       aspectRatio: '16:9'
       styles:
