@@ -122,7 +122,7 @@ sections:
           Professora Doutora em Psicologia Escolar e Educacional pela
           Universidade de Catalão
         image:
-          url: /images/enhanced_image_2.png
+          url: /images/enhanced_image_3.png
           altText: Placeholder image
           styles:
             self:
