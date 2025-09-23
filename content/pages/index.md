@@ -284,7 +284,7 @@ sections:
           - type: Button
             label: Utilizar
             altText: ''
-            url: /
+            url: /banco_geral
             showIcon: true
             icon: arrowRight
             iconPosition: right
