@@ -117,10 +117,12 @@ sections:
         tagline: Apresentamos
         subtitle: Co-Orientadora do Projeto
         text: >
+
+
           Professora Doutora em Psicologia Escolar e Educacional pela
           Universidade de Catalão
         image:
-          url: /images/abstract-feature1.svg
+          url: /images/enhanced_image_3.png
           altText: Placeholder image
           styles:
             self:
@@ -160,7 +162,7 @@ sections:
       - url: /images/wellster-logo.svg
         altText: Wellster logo
         type: ImageBlock
-      - url: /images/cnpq.png
+      - url: /images/logo cnpq.png
         altText: Vise logo
         type: ImageBlock
       - url: /images/contenful-logo.svg
