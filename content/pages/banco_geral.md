@@ -52,7 +52,7 @@ sections:
         features:
           - 'Ao todo, este banco possui 42.232 artigos e publicações científicas.'
           - >-
-            O ano com maior número de publicações foi o ano de 2015, com 453
+            O ano com maior número de publicações foi o ano de 2015, com 3.710
             publicações científicas.
           - >-
             A região sudeste contou com o maior número de publicações,
