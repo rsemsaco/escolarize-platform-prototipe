@@ -54,7 +54,9 @@ sections:
           - >-
             O ano com maior número de publicações foi o ano de 2015, com 3.710
             publicações científicas.
-          - ''
+          - >-
+            O Tema de maior presença nos levantamentos foi o eixo de Inclusão, o
+            qual conta com
         image:
           type: ImageBlock
           url: /images/abstract-feature2.svg
