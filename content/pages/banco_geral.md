@@ -50,7 +50,7 @@ sections:
         description: |
           Constam abaixo alguns números e indicadores referentes ao Banco Geral.
         features:
-          - 'Ao todo, este banco possui 3.931 artigos e publicações científicas.'
+          - 'Ao todo, este banco possui 42.232 artigos e publicações científicas.'
           - >-
             O ano com maior número de publicações foi o ano de 2015, com 453
             publicações científicas.
