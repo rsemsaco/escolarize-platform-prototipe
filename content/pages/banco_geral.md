@@ -56,7 +56,7 @@ sections:
             publicações científicas.
           - >-
             O Tema de maior presença nos levantamentos foi o eixo de Inclusão, o
-            qual conta com
+            qual conta com 20.723 produções.
         image:
           type: ImageBlock
           url: /images/abstract-feature2.svg
