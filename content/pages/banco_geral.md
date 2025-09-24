@@ -11,7 +11,6 @@ sections:
         self:
           textAlign: center
     subtitle: Amostras Gerais
-    firebaseCollection: Artigos_Gerais
     plans:
       - type: PricingPlan
         title: Visualização
@@ -51,13 +50,13 @@ sections:
         description: |
           Constam abaixo alguns números e indicadores referentes ao Banco Geral.
         features:
-          - 'Ao todo, este banco possui 3.931 artigos e publicações científicas.'
+          - 'Ao todo, este banco possui 42.232 artigos e publicações científicas.'
           - >-
-            O ano com maior número de publicações foi o ano de 2015, com 453
+            O ano com maior número de publicações foi o ano de 2015, com 3.710
             publicações científicas.
           - >-
-            A região sudeste contou com o maior número de publicações,
-            concentrando 449.
+            O Tema de maior presença nos levantamentos foi o eixo de Inclusão, o
+            qual conta com 20.723 produções.
         image:
           type: ImageBlock
           url: /images/abstract-feature2.svg
@@ -115,8 +114,8 @@ sections:
 slug: /banco_geral
 seo:
   type: Seo
-  metaTitle: Banco Geral - Demo site
-  metaDescription: Página do Banco Geral conectada ao Firebase (Artigos_Gerais).
+  metaTitle: Pricing - Demo site
+  metaDescription: This is the pricing page built with Netlify Create.
   socialImage: /images/main-hero.jpg
   metaTags: []
 ---
