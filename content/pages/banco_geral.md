@@ -11,6 +11,7 @@ sections:
         self:
           textAlign: center
     subtitle: Amostras Gerais
+    firebaseCollection: Artigos_Gerais
     plans:
       - type: PricingPlan
         title: Visualização
@@ -114,8 +115,8 @@ sections:
 slug: /banco_geral
 seo:
   type: Seo
-  metaTitle: Pricing - Demo site
-  metaDescription: This is the pricing page built with Netlify Create.
+  metaTitle: Banco Geral - Demo site
+  metaDescription: Página do Banco Geral conectada ao Firebase (Artigos_Gerais).
   socialImage: /images/main-hero.jpg
   metaTags: []
 ---
