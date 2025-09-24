@@ -50,7 +50,7 @@ sections:
         details: Números e Indicadores
         description: >
           Constam abaixo alguns números e indicadores referentes ao Banco
-          Brasileiro.
+          Latinoamericano.
         features:
           - 'Ao todo, este banco possui 3.931 artigos e publicações científicas.'
           - >-
