@@ -33,7 +33,7 @@ sections:
         elementId: ''
         type: Link
     media:
-      url: /images/c05e6b68-54c4-478a-a3be-55e7786345cf.jpeg
+      url: /public/images/ChatGPT Image 18 de mai. de 2026, 22_17_19.png
       altText: Unblock your team boost your time to production preview
       elementId: ''
       type: ImageBlock
