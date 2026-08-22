@@ -8,6 +8,7 @@ import Section from '../Section';
 import TitleBlock from '../../blocks/TitleBlock';
 import ImageBlock from '../../blocks/ImageBlock';
 import { Action, Badge } from '../../atoms';
+import SearchSidebar from './SearchSidebar';
 
 // 🔑 Firebase
 import { db } from '../../../utils/firebaseConfig';
@@ -23,6 +24,71 @@ export default function PricingSection(props: any) {
   const [loading, setLoading] = React.useState(false);
   const [showModal, setShowModal] = React.useState(false);
   const [selectedItem, setSelectedItem] = React.useState<any>(null);
+  const [selectedFilters, setSelectedFilters] = React.useState({
+    year: '',
+    magazine: '',
+    tag: ''
+  });
+
+  const getPublicationYear = React.useCallback((value: unknown) => {
+    if (!value) return '';
+    const match = String(value).match(/\b(19|20)\d{2}\b/);
+    return match ? match[0] : '';
+  }, []);
+
+  const years = React.useMemo(
+    () =>
+      Array.from(new Set(results.map((item) => getPublicationYear(item['Data de Publicação'])).filter(Boolean))).sort((a, b) =>
+        b.localeCompare(a)
+      ),
+    [results, getPublicationYear]
+  );
+
+  const magazines = React.useMemo(
+    () =>
+      Array.from(
+        new Set(
+          results
+            .map((item) => String(item['Revista'] || '').trim())
+            .filter(Boolean)
+        )
+      ).sort((a, b) => a.localeCompare(b, 'pt-BR')),
+    [results]
+  );
+
+  const tags = React.useMemo(
+    () =>
+      Array.from(
+        new Set(
+          results
+            .flatMap((item) => String(item['Marcador'] || '').split(/[;,|]/))
+            .map((tag) => tag.trim())
+            .filter(Boolean)
+        )
+      ).sort((a, b) => a.localeCompare(b, 'pt-BR')),
+    [results]
+  );
+
+  const filteredResults = React.useMemo(() => {
+    return results.filter((item) => {
+      const matchesYear = !selectedFilters.year || getPublicationYear(item['Data de Publicação']) === selectedFilters.year;
+      const matchesMagazine =
+        !selectedFilters.magazine || String(item['Revista'] || '').trim() === selectedFilters.magazine;
+      const itemTags = String(item['Marcador'] || '')
+        .split(/[;,|]/)
+        .map((tag) => tag.trim());
+      const matchesTag = !selectedFilters.tag || itemTags.includes(selectedFilters.tag);
+
+      return matchesYear && matchesMagazine && matchesTag;
+    });
+  }, [results, selectedFilters, getPublicationYear]);
+
+  const handleFilterChange = (filterType: string, value: string) => {
+    setSelectedFilters((current) => ({
+      ...current,
+      [filterType]: value
+    }));
+  };
 
   // 🔍 Função de busca no Firestore
   const handleSearch = async () => {
@@ -52,6 +118,7 @@ export default function PricingSection(props: any) {
       });
 
       setResults(filtered);
+      setSelectedFilters({ year: '', magazine: '', tag: '' });
     } catch (error) {
       console.error('❌ Erro ao buscar no Firebase:', error);
       setResults([]);
@@ -62,10 +129,10 @@ export default function PricingSection(props: any) {
 
   // 📤 Exportar CSV
   const exportCSV = () => {
-    if (!results.length) return alert('Nenhum dado para exportar.');
+    if (!filteredResults.length) return alert('Nenhum dado para exportar.');
     const headers = ['Título do Documento','Todos os autores','Revista','Data de Publicação','URL','Marcador'];
     let csvContent = "data:text/csv;charset=utf-8," + headers.join(",") + "\r\n";
-    results.forEach(row => {
+    filteredResults.forEach(row => {
       csvContent += headers.map(h => `"${row[h] || ''}"`).join(",") + "\r\n";
     });
     const encodedUri = encodeURI(csvContent);
@@ -151,59 +218,68 @@ export default function PricingSection(props: any) {
           </button>
         </div>
 
-        {/* 📋 Resultados */}
-        <div className="mb-6" style={{ display:'flex', flexDirection:'column', gap:'0.5rem', width:'100%', maxWidth:'800px' }}>
-          {loading && <p>Carregando...</p>}
-          {!loading && !results.length && queryText && <p>Nenhum resultado encontrado.</p>}
-          {results.map((item, index) => (
-            <div
-              key={index}
-              style={{
-                padding:'0.5rem',
-                border:'1px solid #ccc',
-                borderRadius:'4px',
-                backgroundColor:'#f7f7f7',
-                cursor:'pointer'
-              }}
-              onClick={() => { setSelectedItem(item); setShowModal(true); }}
-            >
-              <strong>{item["Título do Documento"]}</strong>
-              <p>{item["Todos os autores"]} - {item["Revista"]} ({item["Data de Publicação"]})</p>
+        {/* 📋 Resultados + Sidebar */}
+        {loading && <div className="search-loading">Carregando...</div>}
+        {!loading && !results.length && queryText && <div className="search-empty"><p>Nenhum resultado encontrado.</p></div>}
+
+        {!loading && results.length > 0 && (
+          <div className="search-results-container mb-6">
+            <SearchSidebar
+              results={filteredResults}
+              years={years}
+              magazines={magazines}
+              tags={tags}
+              onFilterChange={handleFilterChange}
+              selectedFilters={selectedFilters}
+            />
+
+            <div className="search-results-main">
+              {!filteredResults.length && (
+                <div className="search-empty">
+                  <p>Nenhum artigo corresponde aos filtros selecionados.</p>
+                </div>
+              )}
+
+              {filteredResults.map((item, index) => (
+                <div
+                  key={index}
+                  className="search-result-item"
+                  onClick={() => { setSelectedItem(item); setShowModal(true); }}
+                >
+                  <h3 className="search-result-title">{item["Título do Documento"]}</h3>
+                  <p className="search-result-meta">
+                    {item["Todos os autores"]} - {item["Revista"]} ({item["Data de Publicação"]})
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        )}
 
         {/* Modal de detalhes */}
         {showModal && selectedItem && (
           <div
-            style={{
-              position:'fixed', top:0, left:0, width:'100%', height:'100%',
-              backgroundColor:'rgba(0,0,0,0.4)', display:'flex', justifyContent:'center', alignItems:'center', zIndex:1000
-            }}
+            className="modal-overlay"
             onClick={() => setShowModal(false)}
           >
             <div
-              style={{
-                backgroundColor:'#f0f0f0',
-                padding:'1rem 1.5rem',
-                borderRadius:'6px',
-                minWidth:'300px',
-                maxWidth:'90%',
-                maxHeight:'80%',
-                overflowY:'auto'
-              }}
+              className="modal-content"
               onClick={(e) => e.stopPropagation()}
             >
-              <h3 style={{ marginBottom:'0.5rem' }}>{selectedItem["Título do Documento"]}</h3>
-              <p><strong>Autores:</strong> {selectedItem["Todos os autores"] || 'N/A'}</p>
-              <p><strong>Revista:</strong> {selectedItem["Revista"] || 'N/A'}</p>
-              <p><strong>Data de Publicação:</strong> {selectedItem["Data de Publicação"] || 'N/A'}</p>
-              <p><strong>URL:</strong> {selectedItem["URL"] ? <a href={selectedItem["URL"]} target="_blank">{selectedItem["URL"]}</a> : 'N/A'}</p>
-              <p><strong>Marcador:</strong> {selectedItem["Marcador"] || 'N/A'}</p>
-              <button
-                style={{ marginTop:'1rem', padding:'0.5rem 1rem', borderRadius:'4px', border:'none', backgroundColor:'#d3d3d3', cursor:'pointer' }}
-                onClick={() => setShowModal(false)}
-              >
+              <div className="modal-header">
+                <h3 className="modal-title">{selectedItem["Título do Documento"]}</h3>
+              </div>
+              <div className="modal-field"><span className="modal-label">Autores</span><div className="modal-value">{selectedItem["Todos os autores"] || 'N/A'}</div></div>
+              <div className="modal-field"><span className="modal-label">Revista</span><div className="modal-value">{selectedItem["Revista"] || 'N/A'}</div></div>
+              <div className="modal-field"><span className="modal-label">Data de Publicação</span><div className="modal-value">{selectedItem["Data de Publicação"] || 'N/A'}</div></div>
+              <div className="modal-field">
+                <span className="modal-label">URL</span>
+                <div className="modal-value">
+                  {selectedItem["URL"] ? <a href={selectedItem["URL"]} target="_blank" rel="noreferrer">{selectedItem["URL"]}</a> : 'N/A'}
+                </div>
+              </div>
+              <div className="modal-field"><span className="modal-label">Marcador</span><div className="modal-value">{selectedItem["Marcador"] || 'N/A'}</div></div>
+              <button className="modal-close-btn" onClick={() => setShowModal(false)}>
                 Fechar
               </button>
             </div>
