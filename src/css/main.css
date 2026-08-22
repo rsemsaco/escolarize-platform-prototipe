@@ -325,3 +325,52 @@
         }
     }
 }
+/* ===== Page Transitions ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+.sb-page-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+}
+
+.sb-page-content {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.sb-page-fade-out {
+    animation: fadeOut 0.4s ease-in-out forwards;
+}
+
+.sb-page-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
