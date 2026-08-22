@@ -49,6 +49,10 @@ module.exports = {
             },
             width: {
                 formField: 'calc(50% - 1rem)'
+            },
+            animation: {
+                'fade-in': 'fadeIn 0.6s ease-in-out',
+                'fade-out': 'fadeOut 0.4s ease-in-out',
             }
         }
     },
