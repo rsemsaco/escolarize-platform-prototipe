@@ -19,6 +19,7 @@ export default function FeaturedItem(props) {
             id={elementId}
             className={classNames(
                 'sb-card',
+                'sb-featured-card',
                 colors,
                 styles?.self?.margin ? mapStyles({ margin: styles?.self?.margin }) : undefined,
                 styles?.self?.padding ? mapStyles({ padding: styles?.self?.padding }) : undefined,
@@ -35,11 +36,11 @@ export default function FeaturedItem(props) {
             )}
             data-sb-field-path={fieldPath}
         >
-            <div className={classNames('w-full', 'flex', mapFlexDirectionStyles(flexDirection, hasTextContent, hasImage), 'gap-6')}>
+            <div className={classNames('w-full', 'flex', 'sb-featured-card-layout', mapFlexDirectionStyles(flexDirection, hasTextContent, hasImage), 'gap-6')}>
                 {hasImage && (
                     <ImageBlock
                         {...image}
-                        className={classNames('flex', mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }), {
+                        className={classNames('flex', 'sb-featured-card-image', mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }), {
                             'xs:w-[28.4%] xs:shrink-0': hasTextContent && (flexDirection === 'row' || flexDirection === 'row-reversed')
                         })}
                         {...(fieldPath && { 'data-sb-field-path': '.image' })}
@@ -92,6 +93,7 @@ export default function FeaturedItem(props) {
                                 className={classNames(
                                     'flex',
                                     'flex-wrap',
+                                    'sb-actions-row',
                                     mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }),
                                     'items-center',
                                     'gap-4',
