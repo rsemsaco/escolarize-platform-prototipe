@@ -184,12 +184,13 @@ export default function PricingSection(props: any) {
           </p>
         )}
 
-        {/* 🔎 Barra de pesquisa - AGORA abaixo do subtítulo */}
-        <div style={{ margin: '1.5rem 0', display:'flex', gap:'0.5rem', flexWrap:'wrap', width:'100%', maxWidth:'800px' }}>
+        {/* 🔎 Barra de pesquisa */}
+        <div className="search-toolbar">
           <select
+            aria-label="Campo de pesquisa"
             value={field}
             onChange={(e) => setField(e.target.value)}
-            style={{ padding:'0.5rem', borderRadius:'4px', border:'1px solid #ccc', backgroundColor:'#f0f0f0' }}
+            className="search-toolbar-select"
           >
             <option value="all">Todos</option>
             <option value="Todos os autores">Autores</option>
@@ -201,18 +202,20 @@ export default function PricingSection(props: any) {
             placeholder="Digite sua pesquisa..."
             value={queryText}
             onChange={(e) => setQueryText(e.target.value)}
-            onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-            style={{ flex:1, padding:'0.5rem', borderRadius:'4px', border:'1px solid #ccc', backgroundColor:'#f0f0f0' }}
+            onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+            className="search-toolbar-input"
           />
           <button
+            type="button"
             onClick={handleSearch}
-            style={{ padding:'0.5rem 1rem', borderRadius:'4px', backgroundColor:'#d3d3d3', border:'none', cursor:'pointer' }}
+            className="search-toolbar-button search-toolbar-button-primary"
           >
             Pesquisar
           </button>
           <button
+            type="button"
             onClick={exportCSV}
-            style={{ padding:'0.5rem 1rem', borderRadius:'4px', backgroundColor:'#d3d3d3', border:'none', cursor:'pointer' }}
+            className="search-toolbar-button"
           >
             Exportar CSV
           </button>
