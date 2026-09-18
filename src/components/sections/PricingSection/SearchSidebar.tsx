@@ -79,7 +79,7 @@ export default function SearchSidebar({
                 type="checkbox"
                 value={mag}
                 checked={selectedFilters.magazine === mag}
-                onChange={(e) => onFilterChange('magazine', e.target.value)}
+                onChange={() => onFilterChange('magazine', selectedFilters.magazine === mag ? '' : mag)}
               />
               <span>{mag}</span>
             </label>
@@ -106,13 +106,27 @@ export default function SearchSidebar({
                 type="checkbox"
                 value={tag}
                 checked={selectedFilters.tag === tag}
-                onChange={(e) => onFilterChange('tag', e.target.value)}
+                onChange={() => onFilterChange('tag', selectedFilters.tag === tag ? '' : tag)}
               />
               <span>{tag}</span>
             </label>
           ))}
         </div>
       </div>
+
+      {(selectedFilters.year || selectedFilters.magazine || selectedFilters.tag) && (
+        <button
+          type="button"
+          className="filter-clear-button"
+          onClick={() => {
+            onFilterChange('year', '');
+            onFilterChange('magazine', '');
+            onFilterChange('tag', '');
+          }}
+        >
+          Limpar filtros
+        </button>
+      )}
     </aside>
   );
 }
