@@ -382,7 +382,7 @@ html {
     --es-shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.06);
     --es-shadow-md: 0 12px 30px rgba(15, 23, 42, 0.10);
     --es-shadow-lg: 0 20px 46px rgba(15, 23, 42, 0.14);
-    --es-focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.22);
+    --es-focus-ring: 0 0 0 3px rgba(81, 81, 81, 0.22);
 }
 
 html,
@@ -459,7 +459,7 @@ svg {
     .sb-card:hover {
         transform: translateY(-6px);
         box-shadow: var(--es-shadow-lg);
-        border-color: rgba(37, 99, 235, 0.28);
+        border-color: rgba(81, 81, 81, 0.28);
     }
 
     .sb-component-button:hover {
