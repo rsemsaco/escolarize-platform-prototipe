@@ -462,20 +462,21 @@ sections:
     type: DividerSection
   - type: CarouselSection
     title: null
-    subtitle: Relatos dos profissionais simpatizantes do Projeto
+    subtitle: Relatos sobre o potencial da Plataforma
     items:
       - title: >-
-          “A designer knows he has achieved perfection not when there is nothing
-          left to add, but when there is nothing left to take away.”
-        tagline: Testimonial 1
-        subtitle: 'Maria Walters, Company'
+          “Uma plataforma como a Escolarize pode reduzir significativamente o
+          tempo necessário para localizar produções específicas da Psicologia
+          Escolar e Educacional.”
+        tagline: Relato modelo
+        subtitle: 'Perfil ilustrativo — Pesquisador(a) em Psicologia Escolar e Educacional'
         text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+          Conteúdo demonstrativo enquanto os relatos reais estão em processo de
+          coleta e autorização. O exemplo destaca o potencial da busca integrada
+          para apoiar levantamentos bibliográficos e novas pesquisas.
         image:
           url: /images/person-placeholder-light.png
-          altText: Maria Walters
+          altText: Avatar neutro de relato modelo
           styles:
             self:
               borderRadius: full
@@ -495,17 +496,18 @@ sections:
             justifyContent: center
         type: FeaturedItem
       - title: >-
-          "Design is a plan for arranging elements in such a way as best to
-          accomplish a particular purpose."
-        tagline: Testimonial 2
-        subtitle: 'John Doe, Company'
+          “Reunir produções brasileiras e latino-americanas em um mesmo ambiente
+          pode ampliar a visibilidade de perspectivas que nem sempre aparecem
+          juntas nas buscas tradicionais.”
+        tagline: Relato modelo
+        subtitle: 'Perfil ilustrativo — Psicólogo(a) Escolar'
         text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+          Conteúdo demonstrativo. O relato representa uma possível percepção de
+          profissionais interessados em aproximar a produção científica da
+          prática em Psicologia Escolar e Educacional.
         image:
           url: /images/person-placeholder-light.png
-          altText: John Doe
+          altText: Avatar neutro de relato modelo
           styles:
             self:
               borderRadius: full
@@ -525,17 +527,18 @@ sections:
             justifyContent: center
         type: FeaturedItem
       - title: >-
-          "Design is how it works, how it functions. Good design doesn't just
-          make a product aesthetically pleasing, it makes it a pleasure to use."
-        tagline: Testimonial 3
-        subtitle: 'Maria Walters, Company'
+          “Filtros por período, periódico e marcadores temáticos tornam a
+          exploração de um acervo extenso mais objetiva e podem facilitar a
+          construção de revisões e recortes de pesquisa.”
+        tagline: Relato modelo
+        subtitle: 'Perfil ilustrativo — Estudante e Pesquisador(a)'
         text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
+          Conteúdo demonstrativo. Este exemplo enfatiza a utilidade dos recursos
+          de busca, filtragem e exportação para estudantes em diferentes etapas
+          de formação e investigação científica.
         image:
           url: /images/person-placeholder-light.png
-          altText: Maria Walters
+          altText: Avatar neutro de relato modelo
           styles:
             self:
               borderRadius: full
@@ -554,67 +557,7 @@ sections:
             flexDirection: row
             justifyContent: center
         type: FeaturedItem
-      - title: >-
-          “A designer knows he has achieved perfection not when there is nothing
-          left to add, but when there is nothing left to take away.”
-        tagline: Testimonial 4
-        subtitle: 'Maria Walters, Company'
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
-        image:
-          url: /images/person-placeholder-light.png
-          altText: Maria Walters
-          styles:
-            self:
-              borderRadius: full
-          type: ImageBlock
-        actions: []
-        colors: bg-neutralAlt-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-            textAlign: left
-            borderRadius: large
-            flexDirection: row
-            justifyContent: center
-        type: FeaturedItem
-      - title: >-
-          "Design can be art. Design can be aesthetics. Design is so simple,
-          that's why it is so complicated."
-        tagline: Testimonial 5
-        subtitle: 'Jane Walters, Company'
-        text: >-
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-          explicabo.
-        image:
-          url: /images/person-placeholder-light.png
-          altText: Maria Walters
-          styles:
-            self:
-              borderRadius: full
-          type: ImageBlock
-        actions: []
-        colors: bg-neutralAlt-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-            textAlign: left
-            borderRadius: large
-            flexDirection: row
-            justifyContent: center
-        type: FeaturedItem
-    elementId: null
+    elementId: relatos-modelo
     variant: next-prev-nav
     colors: bg-light-fg-dark
     styles:
