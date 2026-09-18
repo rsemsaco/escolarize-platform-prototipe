@@ -30,6 +30,7 @@ export default function GenericSection(props) {
                 className={classNames(
                     'w-full',
                     'flex',
+                    'sb-generic-layout',
                     mapFlexDirectionStyles(flexDirection, hasTextContent, hasMedia),
                     /* handle horizontal positioning of content on small screens or when direction is col or col-reverse, mapping justifyContent to alignItems instead since it's a flex column */
                     mapStyles({ alignItems: styles?.self?.justifyContent ?? 'flex-start' }),
@@ -41,7 +42,7 @@ export default function GenericSection(props) {
             >
                 {hasTextContent && (
                     <div
-                        className={classNames('w-full', 'max-w-sectionBody', {
+                        className={classNames('w-full', 'max-w-sectionBody', 'sb-generic-content', {
                             'lg:max-w-[27.5rem]': hasMedia && hasXDirection
                         })}
                     >
@@ -79,6 +80,7 @@ export default function GenericSection(props) {
                                 className={classNames(
                                     'flex',
                                     'flex-wrap',
+                                    'sb-actions-row',
                                     mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }),
                                     'items-center',
                                     'gap-4',
@@ -102,7 +104,7 @@ export default function GenericSection(props) {
                 )}
                 {hasMedia && (
                     <div
-                        className={classNames('w-full', 'flex', mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }), {
+                        className={classNames('w-full', 'flex', 'sb-generic-media', mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }), {
                             'max-w-sectionBody': media.__metadata.modelName === 'FormBlock',
                             'lg:w-[57.5%] lg:shrink-0': hasTextContent && hasXDirection,
                             'lg:mt-10': badge?.label && media.__metadata.modelName === 'FormBlock' && hasXDirection

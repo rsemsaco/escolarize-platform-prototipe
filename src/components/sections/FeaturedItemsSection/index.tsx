@@ -54,7 +54,7 @@ export default function FeaturedItemsSection(props) {
                 />
                 {actions.length > 0 && (
                     <div
-                        className={classNames('flex', 'flex-wrap', 'items-center', 'gap-4', {
+                        className={classNames('flex', 'flex-wrap', 'sb-actions-row', 'items-center', 'gap-4', {
                             'mt-12': badge?.label || title?.text || subtitle || items.length > 0
                         })}
                         {...(enableAnnotations && { 'data-sb-field-path': '.actions' })}

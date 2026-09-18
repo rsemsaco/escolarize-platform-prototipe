@@ -26,7 +26,7 @@ export default function Header(props) {
             )}
             {...(enableAnnotations && { 'data-sb-object-id': props?.__metadata?.id })}
         >
-            <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-7xl sb-header-inner">
                 <Link href="#main" className="sr-only">
                     Skip to main content
                 </Link>
@@ -207,20 +207,21 @@ function MobileMenu(props) {
 
         return () => {
             router.events.off('routeChangeStart', handleRouteChange);
+            document.body.style.overflow = 'unset';
         };
     }, [router.events]);
 
     return (
         <div className="ml-auto lg:hidden">
-            <button aria-label="Open Menu" title="Open Menu" className="p-2 -mr-1 focus:outline-none" onClick={openMobileMenu}>
+            <button aria-label="Open Menu" title="Open Menu" className="p-2 -mr-1 focus:outline-none sb-mobile-menu-button" onClick={openMobileMenu}>
                 <span className="sr-only">Open Menu</span>
                 <MenuIcon className="w-6 h-6 fill-current" />
             </button>
-            <div className={classNames(colors, 'fixed', 'inset-0', styles?.self?.padding ?? 'p-4', 'overflow-y-auto', 'z-10', isMenuOpen ? 'block' : 'hidden')}>
+            <div className={classNames(colors, 'fixed', 'inset-0', 'sb-mobile-menu-panel', styles?.self?.padding ?? 'p-4', 'overflow-y-auto', 'z-10', isMenuOpen ? 'block' : 'hidden')}>
                 <div className="flex flex-col min-h-full">
                     <div className="flex items-center justify-between mb-10">
                         {(title || logo?.url) && <SiteLogoLink title={title} logo={logo} enableAnnotations={enableAnnotations} />}
-                        <button aria-label="Close Menu" title="Close Menu" className="p-2 -mr-1 focus:outline-none" onClick={closeMobileMenu}>
+                        <button aria-label="Close Menu" title="Close Menu" className="p-2 -mr-1 focus:outline-none sb-mobile-menu-button" onClick={closeMobileMenu}>
                             <CloseIcon className="w-6 h-6 fill-current" />
                         </button>
                     </div>
